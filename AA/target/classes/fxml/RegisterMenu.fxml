@@ -1,42 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Sphere?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controller">
-   <children>
-      <AnchorPane prefHeight="450.0" prefWidth="700.0">
-         <children>
-            <Sphere drawMode="LINE" layoutX="92.0" layoutY="344.0" radius="50" />
-            <Text layoutX="49.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to AA" wrappingWidth="301.3367233276367">
+    <children>
+        <AnchorPane prefHeight="450.0" prefWidth="700.0">
+            <children>
+                <Sphere drawMode="LINE" layoutX="92.0" layoutY="344.0" radius="50" />
+            <Text layoutX="134.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your username and password to login" textAlignment="CENTER" wrappingWidth="464.0">
                <font>
-                  <Font name="Modern No. 20" size="34.0" />
+                  <Font name="Modern No. 20" size="24.0" />
                </font>
             </Text>
-            <Text fill="#282727" layoutX="645.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AA" wrappingWidth="77.59994506835938">
-               <font>
-                  <Font name="Modern No. 20" size="92.0" />
-               </font>
-            </Text>
-            <Button layoutX="211.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#switchToRegisterPage" prefHeight="26.0" prefWidth="246.0" text="Sign up">
-               <font>
-                  <Font name="Modern No. 20" size="16.0" />
-               </font>
-            </Button>
-            <Button id="loginButton" layoutX="211.0" layoutY="131.0" mnemonicParsing="false" onMouseClicked="#switchToLoginPage" prefHeight="26.0" prefWidth="246.0" text="Login">
-               <font>
-                  <Font name="Modern No. 20" size="15.0" />
-               </font>
-            </Button>
-            <Button layoutX="211.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#switchToMainMenu" prefHeight="26.0" prefWidth="246.0" text="Guset">
-               <font>
-                  <Font name="Modern No. 20" size="15.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-   </children>
+                    <VBox alignment="CENTER" layoutX="74.0" layoutY="149.0" prefHeight="206.0" prefWidth="574.0" spacing="20">
+                        <TextField fx:id="username" maxWidth="300" promptText="username" styleClass="text-input" />
+                        <PasswordField fx:id="password" maxWidth="300" promptText="password" styleClass="text-input2" />
+                        <HBox alignment="CENTER" spacing="20">
+                            <Button onMouseClicked="#register" text="submit" />
+                            <Button onMouseClicked="#reset" text="reset" />
+                        </HBox>
+                    </VBox>
+            <Button layoutX="598.0" layoutY="368.0" mnemonicParsing="false" onMouseClicked="#backToRegisterMenu" text="Back" />
+
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>

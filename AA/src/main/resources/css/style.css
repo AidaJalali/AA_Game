@@ -1,6 +1,6 @@
 Button{
-    -fx-min-width: 100;
-    -fx-max-width: 500;
+    -fx-min-width: 200;
+    -fx-max-width: 700;
     -fx-background-color:
             #53575a,
             linear-gradient(#878b8c, #4b4d4d),
@@ -10,12 +10,13 @@ Button{
     -fx-padding: 3 30 3 30;
     -fx-text-fill: black;
     -fx-font-size: 10px;
+    -fx-font-family: "Modern No. 20";
 }
 
 TextField{
     -fx-max-width: 300;
     -fx-min-width: 300;
-    -fx-font-family: "Arial";
+    -fx-font-family: "Modern No. 20";
     -fx-font-size: 13px;
     -fx-text-fill: -fx-text-inner-color;
     -fx-highlight-fill: derive(-fx-control-inner-background,-20%);
