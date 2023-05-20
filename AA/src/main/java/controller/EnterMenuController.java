@@ -1,5 +1,6 @@
 package controller;
 
+import model.User;
 import view.menu.LoginMenu;
 import view.menu.MainMenu;
 import view.menu.RegisterMenu;
@@ -7,6 +8,7 @@ import view.menu.RegisterMenu;
 import static view.menu.EnterMenu.stage;
 
 public class EnterMenuController {
+    private User currentUser;
 
     public void switchToRegisterMenu() throws Exception{
         RegisterMenu registerMenu = new RegisterMenu();

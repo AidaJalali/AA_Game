@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 
 
 public class EnterMenu extends Application{
+
     public static Stage stage;
     public String css = this.getClass().getResource("/css/style.css").toExternalForm();
     public static void main(String[] args) {

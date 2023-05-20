@@ -4,16 +4,17 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import model.User;
 
 public class RegisterAndLoginMenuController {
+    private User currentUser;
     private PasswordField password;
     private TextField username;
-    public void register(ActionEvent event){
+    public String register(ActionEvent event){
         String usernameError = checkUsernameError();
         String passwordError = checkPasswordError();
         if(usernameError == null && passwordError == null){
-            //CreateAccount();
-            //TODO this part is related to database
+
         }
         else if(usernameError != null){
 
@@ -22,6 +23,13 @@ public class RegisterAndLoginMenuController {
 
         }
     }
+
+           if (UserDatabase.getUser(username) != null) return "Username already exists";
+        if (Utils.isUsernameInvalid(username)) return "Username is invalid";
+        if (Utils.isPasswordInvalid(password)) return "Weak password";
+    User newUser = new User(username, password, Utils.generateRandomAvatarPath(), false);
+        UserDatabase.addUser(newUser);
+        return "Sign up successful";
 
     public void login(ActionEvent event){
         //TODO this part is related to database

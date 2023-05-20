@@ -1,6 +1,7 @@
 package controller;
 
-import view.menu.GameMenu;
+import model.User;
+import view.game.Game;
 import view.menu.ProfileMenu;
 import view.menu.ScoreMenu;
 import view.menu.SettingMenu;
@@ -8,9 +9,10 @@ import view.menu.SettingMenu;
 import static view.menu.EnterMenu.stage;
 
 public class MainMenuController {
+    private User currentUser;
     public void startGame() throws Exception{
-        GameMenu gameMenu = new GameMenu();
-        gameMenu.start(stage);
+        Game game = new Game();
+        game.start(stage);
     }
 
     public void resumeGame() throws Exception{
