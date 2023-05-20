@@ -17,6 +17,7 @@ public class controller {
     public void switchToLoginPage()throws Exception{
         LoginPage loginPage = new LoginPage();
         loginPage.start(stage);
+        System.out.println("rara");
     }
 
     public void switchToMainMenu() throws Exception {
