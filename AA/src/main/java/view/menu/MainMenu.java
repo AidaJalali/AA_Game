@@ -1,5 +1,6 @@
 package view.menu;
 
+import controller.MainMenuController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,6 +10,7 @@ import java.net.URL;
 
 public class MainMenu {
     public String css = this.getClass().getResource("/css/style.css").toExternalForm();
+    private static MainMenuController mainMenuController;
     public void start(Stage stage) throws Exception {
         EnterMenu.stage = stage;
         URL url = MainMenu.class.getResource("/fxml/MainMenu.fxml");

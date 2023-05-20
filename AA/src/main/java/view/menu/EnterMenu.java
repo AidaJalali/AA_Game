@@ -1,4 +1,5 @@
 package view.menu;
+import controller.EnterMenuController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,9 +8,10 @@ import javafx.stage.Stage;
 
 
 public class EnterMenu extends Application{
-
     public static Stage stage;
-    public String css = this.getClass().getResource("/css/style.css").toExternalForm();
+    private final EnterMenuController enterMenuController = new EnterMenuController();
+    private String css = this.getClass().getResource("/css/style.css").toExternalForm();
+
     public static void main(String[] args) {
         launch();
     }
@@ -21,6 +23,18 @@ public class EnterMenu extends Application{
         scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
+        }
+
+        public void enterLoginMenu(){
+
+        }
+
+        public void enterRegisterMenu(){
+
+        }
+
+        public void enterMainMenuAsGuest(){
+
         }
 
     }

@@ -5,7 +5,7 @@
 <?import javafx.scene.shape.Sphere?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controller">
+<AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.MainMenu">
         <children>
             <Sphere drawMode="LINE" layoutX="92.0" layoutY="344.0" radius="50" />
             <Button layoutX="548.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#backToRegisterMenu" text="Back" />
