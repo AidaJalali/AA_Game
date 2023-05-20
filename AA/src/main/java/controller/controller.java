@@ -7,29 +7,36 @@ import view.menu.*;
 
 public class controller {
 
-    Stage stage = RegisterMenu.stage;
+    EnterMenuController enterMenuController = new EnterMenuController();
+    RegisterAndLoginMenuController registerAndLoginMenuController = new RegisterAndLoginMenuController();
+    ProfileMenuController profileMenuController = new ProfileMenuController();
+    MainMenuController mainMenuController = new MainMenuController();
+    ScoreMenuController scoreMenuController = new ScoreMenuController();
+    SettingMenuController settingMenuController = new SettingMenuController();
+    Stage stage = EnterMenu.stage;
 
-    public void switchToRegisterPage() throws Exception{
-        RegisterPage registerPage = new RegisterPage();
-        registerPage.start(stage);
-    }
+    //                                  <<<<<< MENU FUNCTIONS >>>>>>
 
-    public void switchToLoginPage()throws Exception{
-        LoginPage loginPage = new LoginPage();
-        loginPage.start(stage);
-        System.out.println("rara");
-    }
-
-    public void switchToMainMenu() throws Exception {
-        MainMenu mainMenu = new MainMenu();
-        mainMenu.start(stage);
-    }
-
+    //functions that are common between menus
     public void backToRegisterMenu() throws Exception {
-        RegisterMenu registerMenu = new RegisterMenu();
-        registerMenu.start(stage);
+        EnterMenu enterMenu = new EnterMenu();
+        enterMenu.start(stage);
     }
 
+    //functions related to every Menu
+
+    //Enter menu
+    public void switchToRegisterMenu() throws Exception{
+        enterMenuController.switchToRegisterMenu();
+    }
+    public void switchToLoginMenu()throws Exception{
+        enterMenuController.switchToLoginMenu();
+    }
+    public void switchToMainMenu() throws Exception {
+        enterMenuController.switchToMainMenu();
+    }
+
+    //Main menu
     public void switchToGameMenu() throws Exception{
         GameMenu gameMenu = new GameMenu();
         gameMenu.start(stage);
@@ -50,8 +57,9 @@ public class controller {
         scoreMenu.start(stage);
     }
 
+    //Register and Login Menu
     public void register(ActionEvent event){
-
+        registerAndLoginMenuController.register(event);
     }
 
     public void login(ActionEvent event){
