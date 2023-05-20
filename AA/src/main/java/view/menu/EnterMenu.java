@@ -15,7 +15,7 @@ public class EnterMenu extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         EnterMenu.stage = stage;
-        Parent parent = FXMLLoader.load(EnterMenu.class.getResource("/fxml/RegisterMenu.fxml"));
+        Parent parent = FXMLLoader.load(EnterMenu.class.getResource("/fxml/EnterMenu.fxml"));
         Scene scene = new Scene(parent);
         scene.getStylesheets().add(css);
         stage.setScene(scene);

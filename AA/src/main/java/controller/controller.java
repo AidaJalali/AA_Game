@@ -13,6 +13,7 @@ public class controller {
     MainMenuController mainMenuController = new MainMenuController();
     ScoreMenuController scoreMenuController = new ScoreMenuController();
     SettingMenuController settingMenuController = new SettingMenuController();
+    GameController gameController = new GameController();
     Stage stage = EnterMenu.stage;
 
     //                                  <<<<<< MENU FUNCTIONS >>>>>>
@@ -37,24 +38,24 @@ public class controller {
     }
 
     //Main menu
-    public void switchToGameMenu() throws Exception{
-        GameMenu gameMenu = new GameMenu();
-        gameMenu.start(stage);
+    public void startGame() throws Exception{
+        mainMenuController.startGame();
+    }
+
+    public void resumeGame() throws Exception{
+        mainMenuController.resumeGame();
     }
 
     public void switchToProfileMenu() throws Exception{
-        ProfileMenu profileMenu = new ProfileMenu();
-        profileMenu.start(stage);
+        mainMenuController.switchToProfileMenu();
     }
 
     public void switchToSettingMenu() throws Exception{
-        SettingMenu settingMenu = new SettingMenu();
-        settingMenu.start(stage);
+        mainMenuController.switchToSettingMenu();
     }
 
-    public void switchToScoreMenu() throws Exception{
-        ScoreMenu scoreMenu = new ScoreMenu();
-        scoreMenu.start(stage);
+    public void switchToScoreTable() throws Exception{
+        mainMenuController.switchToScoreTable();
     }
 
     //Register and Login Menu
@@ -63,7 +64,10 @@ public class controller {
     }
 
     public void login(ActionEvent event){
-
+        registerAndLoginMenuController.login(event);
+    }
+    public void reset(ActionEvent event){
+        registerAndLoginMenuController.reset(event);
     }
 
     }

@@ -15,4 +15,7 @@ public class RegisterAndLoginMenuController {
     public void login(ActionEvent event){
 
     }
+    public void reset(ActionEvent event){
+
+    }
 }

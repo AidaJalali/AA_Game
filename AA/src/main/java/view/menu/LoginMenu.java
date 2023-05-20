@@ -9,7 +9,7 @@ public class LoginMenu {
     public String css = this.getClass().getResource("/css/style.css").toExternalForm();
     public void start(Stage stage) throws Exception {
         EnterMenu.stage = stage;
-        Parent parent = FXMLLoader.load(EnterMenu.class.getResource("/fxml/LoginPage.fxml"));
+        Parent parent = FXMLLoader.load(EnterMenu.class.getResource("/fxml/LoginMenu.fxml"));
         Scene scene = new Scene(parent);
         scene.getStylesheets().add(css);
         stage.setScene(scene);

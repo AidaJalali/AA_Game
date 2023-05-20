@@ -2,8 +2,9 @@ module AA {
     requires javafx.controls;
     requires javafx.fxml;
     exports controller;
-    exports view.menu;
+    opens controller to javafx.fxml;
     exports model;
+    exports view.menu;
     opens view.menu to javafx.fxml;
 }
 
