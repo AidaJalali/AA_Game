@@ -70,6 +70,14 @@ public class DataBase {
             return null;
         }
 
+        public void deleteUserByUsername(String username){
+            for(User user: users) {
+                if(user.getUsername().equals(username)) {
+                    users.remove(user);
+                }
+            }
+        }
+
         private class sortUsers implements Comparator<User> {
             public int compare(User a, User b) {
                 if (a.getScore() != b.getScore()) return b.getScore() - a.getScore();
@@ -88,6 +96,5 @@ public class DataBase {
             }
             return -1;
         }
-
 
     }

@@ -1,6 +1,6 @@
 package view.menu;
 
-import controller.RegisterAndLoginMenuController;
+import controller.RegisterAndLoginAndProfileMenuController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class RegisterMenu extends Application {
     public String css = this.getClass().getResource("/css/style.css").toExternalForm();
-    private static RegisterAndLoginMenuController registerAndLoginMenuController;
+    private static RegisterAndLoginAndProfileMenuController registerAndLoginAndProfileMenuController;
     private static Stage stage;
     public void start(Stage stage) throws Exception {
         this.stage = stage;

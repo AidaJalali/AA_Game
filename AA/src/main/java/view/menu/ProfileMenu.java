@@ -1,6 +1,5 @@
 package view.menu;
 
-import controller.ProfileMenuController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
