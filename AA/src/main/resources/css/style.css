@@ -1,6 +1,7 @@
+
 Button{
     -fx-min-width: 200;
-    -fx-max-width: 700;
+    -fx-max-width: 500;
     -fx-background-color:
             #53575a,
             linear-gradient(#878b8c, #4b4d4d),
@@ -9,7 +10,7 @@ Button{
     -fx-background-radius: 3,2,1;
     -fx-padding: 3 30 3 30;
     -fx-text-fill: black;
-    -fx-font-size: 10px;
+    -fx-font-size: 20px;
     -fx-font-family: "Modern No. 20";
 }
 
@@ -31,5 +32,11 @@ TextField{
     -fx-border-style: hidden hidden solid hidden;
     -fx-cursor: text;
     -fx-padding: 0.166667em 0em 0.333333em 0em;
+}
+
+
+Label {
+    -fx-font-family: "Modern No. 20";
+    -fx-text-fill: #a2a0a0;
 }
 
