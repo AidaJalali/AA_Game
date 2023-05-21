@@ -28,7 +28,7 @@
                             <Button onMouseClicked="#reset" text="reset" />
                         </HBox>
                     </VBox>
-            <Button layoutX="598.0" layoutY="368.0" mnemonicParsing="false" onMouseClicked="#backToRegisterMenu" text="Back" />
+            <Button layoutX="598.0" layoutY="368.0" mnemonicParsing="false" onMouseClicked="#backToEnterMenu" text="Back" />
 
             </children>
         </AnchorPane>

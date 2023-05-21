@@ -8,15 +8,15 @@
 <AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.MainMenu">
         <children>
             <Sphere drawMode="LINE" layoutX="92.0" layoutY="344.0" radius="50" />
-            <Button layoutX="548.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#backToRegisterMenu" text="Back" />
-      <Button layoutX="149.0" layoutY="210.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="372.0" text="ScoreTable" onMouseClicked="#switchToScoreTable"/>
-      <Button layoutX="149.0" layoutY="252.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="372.0" text="SettingMenu" onMouseClicked="#switchToSettingMenu"/>
-      <Button layoutX="149.0" layoutY="83.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="372.0" text="Start Game" onMouseClicked="#startGame">
+            <Button layoutX="548.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#exit" text="Exit" />
+      <Button layoutX="149.0" layoutY="210.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="372.0" text="ScoreTable" onMouseClicked="#enterScoreTable"/>
+      <Button layoutX="149.0" layoutY="252.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="372.0" text="SettingMenu" onMouseClicked="#enterSettingMenu"/>
+      <Button layoutX="149.0" layoutY="83.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="372.0" text="Start Game" onMouseClicked="#resumeGame">
          <font>
             <Font name="Modern No. 20" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="149.0" layoutY="167.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="372.0" text="ProfileMenu" onMouseClicked="#switchToProfileMenu" />
+      <Button layoutX="149.0" layoutY="167.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="372.0" text="ProfileMenu" onMouseClicked="#enterProfileMenu" />
       <Button layoutX="149.0" layoutY="124.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="372.0" text="Resume Game" onMouseClicked="#resumeGame" />
         </children>
 </AnchorPane>

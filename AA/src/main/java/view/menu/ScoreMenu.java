@@ -9,15 +9,23 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class ScoreMenu extends Application {
+    public static Stage stage;
     public String css = this.getClass().getResource("/css/style.css").toExternalForm();
     private static ScoreMenuController scoreMenuController;
-    private static Stage stage;
     public void start(Stage stage) throws Exception {
-        this.stage = stage;
         Parent parent = FXMLLoader.load(EnterMenu.class.getResource("/fxml/ScoreMenu.fxml"));
         Scene scene = new Scene(parent);
         scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
+        ScoreMenu.stage = stage;
+    }
+
+    public static ScoreMenuController getScoreMenuController() {
+        return scoreMenuController;
+    }
+
+    public static void setScoreMenuController(ScoreMenuController scoreMenuController) {
+        ScoreMenu.scoreMenuController = scoreMenuController;
     }
 }

@@ -21,17 +21,17 @@
                   <Font name="Modern No. 20" size="92.0" />
                </font>
             </Text>
-            <Button layoutX="211.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#switchToRegisterMenu" prefHeight="26.0" prefWidth="246.0" text="Sign up">
+            <Button layoutX="211.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#enterRegisterMenu" prefHeight="26.0" prefWidth="246.0" text="Sign up">
                <font>
                   <Font name="Modern No. 20" size="16.0" />
                </font>
             </Button>
-            <Button id="loginButton" layoutX="211.0" layoutY="131.0" mnemonicParsing="false" onMouseClicked="#switchToLoginMenu" prefHeight="26.0" prefWidth="246.0" text="Login">
+            <Button id="loginButton" layoutX="211.0" layoutY="131.0" mnemonicParsing="false" onMouseClicked="#enterLoginMenu" prefHeight="26.0" prefWidth="246.0" text="Login">
                <font>
                   <Font name="Modern No. 20" size="15.0" />
                </font>
             </Button>
-            <Button layoutX="211.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#switchToMainMenu" prefHeight="26.0" prefWidth="246.0" text="Guset">
+            <Button layoutX="211.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#enterMainMenuAsGuest" prefHeight="26.0" prefWidth="246.0" text="Guset">
                <font>
                   <Font name="Modern No. 20" size="15.0" />
                </font>

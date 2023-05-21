@@ -1,5 +1,6 @@
 package view.menu;
-import controller.EnterMenuController;
+import controller.MainMenuController;
+import controller.RegisterAndLoginAndProfileMenuController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,34 +9,39 @@ import javafx.stage.Stage;
 
 
 public class EnterMenu extends Application{
-    private static Stage stage;
-    private final EnterMenuController enterMenuController = new EnterMenuController();
-    private String css = this.getClass().getResource("/css/style.css").toExternalForm();
+    public static Stage stage;
+    private final String css = this.getClass().getResource("/css/style.css").toExternalForm();
 
     public static void main(String[] args) {
         launch();
     }
     @Override
     public void start(Stage stage) throws Exception {
-        EnterMenu.stage = stage;
-        Parent parent = FXMLLoader.load(EnterMenu.class.getResource("/fxml/EnterMenu.fxml"));
+        Parent parent = FXMLLoader.load(this.getClass().getResource("/fxml/EnterMenu.fxml"));
         Scene scene = new Scene(parent);
         scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
+        EnterMenu.stage = stage;
         }
 
-        public void enterLoginMenu(){
-
+        public void enterLoginMenu() throws Exception {
+            LoginMenu.setRegisterAndLoginAndProfileMenuController(new RegisterAndLoginAndProfileMenuController());
+            new LoginMenu().start(stage);
         }
 
-        public void enterRegisterMenu(){
-
+        public void enterRegisterMenu() throws Exception {
+            LoginMenu.setRegisterAndLoginAndProfileMenuController(new RegisterAndLoginAndProfileMenuController());
+            new RegisterMenu().start(stage);
         }
 
-        public void enterMainMenuAsGuest(){
 
+        public void enterMainMenuAsGuest() throws Exception {
+            MainMenu.setMainMenuController(new MainMenuController());
+            new MainMenu().start(stage);
         }
+
+
 
     }
 
