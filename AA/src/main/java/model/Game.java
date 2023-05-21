@@ -1,13 +1,27 @@
 package model;
 
-public class Game {
-    private int littleNumber;
+import javafx.scene.shape.Circle;
 
-    public int getLittleNumber() {
-        return littleNumber;
+import java.util.ArrayList;
+
+public class Game {
+    private final BigBall bigBall;
+    private final Circle invisibleBall = new Circle(450,350,200);
+    private ArrayList<LittleBall>littleBallsForPlayer = new ArrayList<>();
+
+    public Game(BigBall bigBall) {
+        this.bigBall = bigBall;
     }
 
-    public void setLittleNumber(int littleNumber) {
-        this.littleNumber = littleNumber;
+    public BigBall getBigBall() {
+        return bigBall;
+    }
+
+    public void addLittleBallsForPlayer(LittleBall littleBall){
+        littleBallsForPlayer.add(littleBall);
+    }
+
+    public Circle getInvisibleBall() {
+        return invisibleBall;
     }
 }

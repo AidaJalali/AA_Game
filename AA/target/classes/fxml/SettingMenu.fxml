@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.*?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Sphere?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="view.menu.SettingMenu"
-            prefHeight="400.0" prefWidth="600.0">
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.SettingMenu">
     <children>
-        <Sphere drawMode="LINE" layoutX="92.0" layoutY="344.0" radius="50" />
+        <Sphere drawMode="LINE" layoutX="184.0" layoutY="514.0" radius="150.0" />
+      <VBox layoutX="241.0" layoutY="25.0" prefHeight="318.0" prefWidth="418.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Set Difficulty" onMouseClicked="#setDifficulty" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Set Map" onMouseClicked="#goToMapPage"/>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Set Little Ball Numbers" onMouseClicked="#setLittleNumbers"/>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Mute" onMouseClicked="#setMute" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Set Theme" onMouseClicked="#setTheme"/>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Change Language" onMouseClicked="#changeLanguage" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Change Buttons" onMouseClicked="#changeButtons"/>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Back" onMouseClicked="#backToMainMenu" />
+         </children>
+      </VBox>
     </children>
 
 

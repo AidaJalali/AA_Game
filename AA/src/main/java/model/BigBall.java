@@ -7,7 +7,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 
+import java.util.ArrayList;
+
 public class BigBall extends Circle {
+    private ArrayList<LittleBall>littleBalls = new ArrayList<>();
 
     public BigBall (){
         super(450,350,100);
@@ -22,5 +25,13 @@ public class BigBall extends Circle {
 //        rotateTransition.play();
 //        Group root = new Group();
 //        root.getChildren().add(circle);
+    }
+
+    public void addLittleBallToBigBall(LittleBall littleBall){
+        littleBalls.add(littleBall);
+    }
+
+    public ArrayList<LittleBall> getLittleBalls() {
+        return littleBalls;
     }
 }

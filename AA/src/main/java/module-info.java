@@ -10,6 +10,8 @@ module AA {
     opens view.menu to javafx.fxml;
     exports view.game;
     opens view.game to javafx.fxml;
+    exports view.menu.settingMenuPages;
+    opens view.menu.settingMenuPages to javafx.fxml;
 
 }
 
