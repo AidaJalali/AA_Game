@@ -8,7 +8,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextBoundsType;
 import javafx.stage.Stage;
@@ -48,12 +47,12 @@ public class GameMenu extends Application {
 
     public void setLittleBalls(int numberOfBalls){
         for (int i = 0; i < SettingMenuController.getNumberOfLittleBallsForPlayer();i++){
-            //LittleBall littleBall = new LittleBall();
             Circle circle = new Circle();
             Text text = new Text(String.valueOf(i));
             text.setBoundsType(TextBoundsType.VISUAL);
             StackPane stack = new StackPane();
-            stack.getChildren().add(littleBall, text);
+            stack.getChildren().add(circle);
+            stack.getChildren().add(text);
             game.addLittleBallsForPlayer(new LittleBall());
         }
     }
