@@ -10,9 +10,9 @@
       <Circle layoutX="434.0" layoutY="128.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle layoutX="246.0" layoutY="350.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle layoutX="590.0" layoutY="429.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
-      <Button layoutX="393.0" layoutY="103.0" mnemonicParsing="false" onMouseClicked="#chooseMapOne" prefHeight="46.0" prefWidth="62.0" text="Map 1" />
-      <Button layoutX="205.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#chooseMapTwo" prefHeight="46.0" prefWidth="62.0" text="Map 2" />
-      <Button layoutX="542.0" layoutY="410.0" mnemonicParsing="false" onMouseClicked="#chooseMapThree" prefHeight="46.0" prefWidth="62.0" text="Map 3" />
+      <Button layoutX="393.0" layoutY="103.0" mnemonicParsing="false" onMouseClicked="#chooseMapOne" prefHeight="46.0" prefWidth="62.0" text="Easy" />
+      <Button layoutX="205.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#chooseMapTwo" prefHeight="46.0" prefWidth="62.0" text="Medium" />
+      <Button layoutX="542.0" layoutY="410.0" mnemonicParsing="false" onMouseClicked="#chooseMapThree" prefHeight="46.0" prefWidth="62.0" text="Hard" />
       <Circle layoutX="262.0" layoutY="117.0" radius="36.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle layoutX="118.0" layoutY="89.0" radius="36.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle layoutX="126.0" layoutY="214.0" radius="36.0" stroke="BLACK" strokeType="INSIDE" />

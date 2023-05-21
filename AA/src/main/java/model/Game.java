@@ -11,6 +11,7 @@ public class Game {
 
     public Game(BigBall bigBall) {
         this.bigBall = bigBall;
+        invisibleBall.setVisible(false);
     }
 
     public BigBall getBigBall() {
@@ -23,5 +24,9 @@ public class Game {
 
     public Circle getInvisibleBall() {
         return invisibleBall;
+    }
+
+    public ArrayList<LittleBall> getLittleBallsForPlayer() {
+        return littleBallsForPlayer;
     }
 }

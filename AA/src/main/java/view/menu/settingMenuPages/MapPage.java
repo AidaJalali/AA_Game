@@ -24,11 +24,11 @@ public class MapPage extends Application {
     }
 
     public void chooseMapOne(ActionEvent event){
-        SettingMenuController.setNumberOfLittleBallsOnBigBall(10);
+        SettingMenuController.setNumberOfLittleBallsOnBigBall(6);
     }
 
     public void chooseMapTwo(ActionEvent event){
-        SettingMenuController.setNumberOfLittleBallsOnBigBall(15);
+        SettingMenuController.setNumberOfLittleBallsOnBigBall(12);
     }
 
     public void chooseMapThree(ActionEvent event){

@@ -2,19 +2,28 @@ package view.game;
 
 import controller.GameController;
 import controller.SettingMenuController;
+import javafx.animation.Animation;
+import javafx.animation.RotateTransition;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextBoundsType;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import model.BigBall;
 import model.Game;
 import model.LittleBall;
-import view.menu.EnterMenu;
+import view.menu.MainMenu;
+
+import static java.lang.Math.cos;
+import static java.lang.Math.sin;
 
 public class GameMenu extends Application {
     public static Stage stage;
@@ -33,32 +42,55 @@ public class GameMenu extends Application {
 
     private void initializeGame(AnchorPane anchorPane) {
         Game game = new Game(new BigBall());
-        for (int i = 0; i < SettingMenuController.getNumberOfLittleBallsForPlayer();i++){
-            game.addLittleBallsForPlayer(new LittleBall());
-        }
-        //TODO --> you should set balls based on map
-        for (int i = 0; i < SettingMenuController.getNumberOfLittleBallsOnBigBall();i++){
-            game.getBigBall().addLittleBallToBigBall(new LittleBall());
-        }
         GameController.setGame(game);
+        this.game = game;
+        setLittleBallsOnBigBall(anchorPane);
+        setPlayerBalls(anchorPane);
+        RotateTransition rotateTransition = new RotateTransition();
+        rotateTransition.setNode(game.getInvisibleBall());
+        rotateTransition.setDuration(Duration.seconds(2));
+        rotateTransition.setByAngle(360);
+        rotateTransition.setCycleCount(Animation.INDEFINITE);
+        rotateTransition.setAutoReverse(false);
+        rotateTransition.play();
         anchorPane.getChildren().add(game.getBigBall());
-        anchorPane.getChildren().add(game.getInvisibleBall());
+        anchorPane.getChildren().add(game.getInvisibleBall());}
+
+    private void setPlayerBalls(AnchorPane anchorPane) {
+        int numberOfBalls = SettingMenuController.getNumberOfLittleBallsForPlayer();
+        for (int i = 0; i < numberOfBalls;i++){
+            LittleBall littleBall = new LittleBall();
+            littleBall.setCenterX(game.getBigBall().getCenterX());
+            littleBall.setCenterY(game.getBigBall().getCenterY() - 100);
+            StackPane stack = new StackPane();
+            Text text = new Text(String.valueOf(i));
+            text.setFill(Color.WHITE);
+            text.setBoundsType(TextBoundsType.VISUAL);
+            stack.getChildren().add(game.getBigBall());
+            stack.getChildren().add(text);
+            game.addLittleBallsForPlayer(littleBall);
+            anchorPane.getChildren().add(stack);
+        }
+        for(int i = 0;i < numberOfBalls - 1;i++)
+            game.getLittleBallsForPlayer().get(i).setVisible(false);
     }
 
-    public void setLittleBalls(int numberOfBalls){
-        for (int i = 0; i < SettingMenuController.getNumberOfLittleBallsForPlayer();i++){
-            Circle circle = new Circle();
-            Text text = new Text(String.valueOf(i));
-            text.setBoundsType(TextBoundsType.VISUAL);
-            StackPane stack = new StackPane();
-            stack.getChildren().add(circle);
-            stack.getChildren().add(text);
-            game.addLittleBallsForPlayer(new LittleBall());
+    public void setLittleBallsOnBigBall(AnchorPane anchorPane){
+        int numberOfBalls = SettingMenuController.getNumberOfLittleBallsOnBigBall();
+        Circle invisibleBall = game.getInvisibleBall();
+        int angle = 360 / numberOfBalls;
+        for (int i = 0; i < numberOfBalls;i++){
+            game.getBigBall().addLittleBallToBigBall(new LittleBall());
+            double x = invisibleBall.getCenterX() + cos(i * angle) * invisibleBall.getRadius();
+            double y = invisibleBall.getCenterY() + sin(i * angle) * invisibleBall.getRadius();
+            game.getBigBall().getLittleBalls().get(i).setCenterX(x);
+            game.getBigBall().getLittleBalls().get(i).setCenterY(y);
+            anchorPane.getChildren().add(game.getBigBall().getLittleBalls().get(i));
         }
     }
 
     public void Back() throws Exception {
-        new EnterMenu().start(stage);
+        new MainMenu().start(stage);
     }
 
     public static GameController getGameController() {
