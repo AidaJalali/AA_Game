@@ -1,5 +1,6 @@
 package view.menu;
 
+import controller.MainMenuController;
 import controller.RegisterAndLoginAndProfileMenuController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -16,7 +17,7 @@ public class RegisterMenu extends Application {
     public String css = this.getClass().getResource("/css/style.css").toExternalForm();
     public TextField username;
     public PasswordField password;
-    public Label label;
+    public Label Error;
     private static RegisterAndLoginAndProfileMenuController registerAndLoginAndProfileMenuController;
     public void start(Stage stage) throws Exception {
         Parent parent = FXMLLoader.load(this.getClass().getResource("/fxml/RegisterMenu.fxml"));
@@ -27,8 +28,16 @@ public class RegisterMenu extends Application {
         RegisterMenu.stage = stage;
     }
 
-    public void register(ActionEvent event){
-
+    public void register(ActionEvent event) throws Exception {
+        String username = this.username.getText();
+        String password = this.password.getText();
+        String message = registerAndLoginAndProfileMenuController.register(username,password);
+        if(!message.equals("Login was successful")){
+            reset();
+            Error.setText(message);
+        }
+        Error.setText("Login was successful");
+        enterMainMenu();
     }
 
     public void reset(){
@@ -36,6 +45,12 @@ public class RegisterMenu extends Application {
         this.password.setText("");
     }
 
+    public void enterMainMenu() throws Exception {
+        MainMenuController mainMenuController = new MainMenuController();
+        mainMenuController.setCurrentUser(registerAndLoginAndProfileMenuController.getCurrentUser());
+        MainMenu.setMainMenuController(mainMenuController);
+        new MainMenu().start(stage);
+    }
     public void backToEnterMenu() throws Exception{
         new EnterMenu().start(stage);
     }

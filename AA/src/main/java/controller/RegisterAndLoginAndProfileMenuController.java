@@ -29,7 +29,7 @@ public class RegisterAndLoginAndProfileMenuController {
         String usernameError = checkUsernameError(username);
         if(usernameError != null) return usernameError;
         currentUser.setUsername(username);
-        //TODO HOW TO SAVE CHANGES ?
+        DataBase.getInstance().saveData();
         return "Username changed successfully";
 
     }
@@ -37,7 +37,7 @@ public class RegisterAndLoginAndProfileMenuController {
         String passwordError = checkPasswordError(password);
         if(passwordError != null) return passwordError;
         currentUser.setPassword(password);
-        //TODO HOW TO SAVE CHANGES?
+        DataBase.getInstance().saveData();
         return "Password changed successfully";
     }
 

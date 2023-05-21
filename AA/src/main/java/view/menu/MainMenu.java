@@ -1,16 +1,13 @@
 package view.menu;
 
-import controller.MainMenuController;
-import controller.RegisterAndLoginAndProfileMenuController;
-import controller.ScoreMenuController;
-import controller.SettingMenuController;
+import controller.*;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.net.URL;
+import view.game.GameMenu;
 
 public class MainMenu extends Application {
     public static Stage stage;
@@ -25,6 +22,12 @@ public class MainMenu extends Application {
         MainMenu.stage = stage;
     }
 
+    public void startGame(ActionEvent event) throws Exception {
+        GameController gameController = new GameController();
+        gameController.setCurrentUser(gameController.getCurrentUser());
+        GameMenu.setGameController(gameController);
+        new GameMenu().start(stage);
+    }
     public void resumeGame() throws Exception{
 
     }

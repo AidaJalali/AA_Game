@@ -2,6 +2,7 @@ package view.menu;
 
 import controller.RegisterAndLoginAndProfileMenuController;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,6 +19,15 @@ public class ProfileMenu extends Application {
         stage.setScene(scene);
         stage.show();
         ProfileMenu.stage = stage;
+    }
+
+    public void changeUsername(ActionEvent event){
+
+    }
+    public void changePassword(ActionEvent event){
+    }
+
+    public void deleteAccount(ActionEvent event){
     }
 
     public static RegisterAndLoginAndProfileMenuController getProfileMenuController() {
