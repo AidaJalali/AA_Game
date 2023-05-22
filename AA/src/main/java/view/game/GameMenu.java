@@ -3,13 +3,12 @@ package view.game;
 import controller.GameController;
 import controller.SettingMenuController;
 import javafx.animation.Animation;
-import javafx.animation.RotateTransition;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -35,6 +34,7 @@ public class GameMenu extends Application {
         Scene scene = new Scene(anchorPane);
         scene.getStylesheets().add(css);
         initializeGame(anchorPane);
+        setRotationSettings();
         GameMenu.stage = stage;
         stage.setScene(scene);
         stage.show();
@@ -46,15 +46,9 @@ public class GameMenu extends Application {
         this.game = game;
         setLittleBallsOnBigBall(anchorPane);
         setPlayerBalls(anchorPane);
-        RotateTransition rotateTransition = new RotateTransition();
-        rotateTransition.setNode(game.getInvisibleBall());
-        rotateTransition.setDuration(Duration.seconds(2));
-        rotateTransition.setByAngle(360);
-        rotateTransition.setCycleCount(Animation.INDEFINITE);
-        rotateTransition.setAutoReverse(false);
-        rotateTransition.play();
         anchorPane.getChildren().add(game.getBigBall());
-        anchorPane.getChildren().add(game.getInvisibleBall());}
+        anchorPane.getChildren().add(game.getInvisibleBall());
+    }
 
     private void setPlayerBalls(AnchorPane anchorPane) {
         int numberOfBalls = SettingMenuController.getNumberOfLittleBallsForPlayer();
@@ -88,6 +82,24 @@ public class GameMenu extends Application {
             anchorPane.getChildren().add(game.getBigBall().getLittleBalls().get(i));
         }
     }
+
+
+    private void setRotationSettings() {
+            for (int i = 0 ; i < game.getBigBall().getLittleBalls().size();i++){
+                LittleBall littleBall = game.getBigBall().getLittleBalls().get(i);
+                Timeline timeline = new Timeline(new KeyFrame(Duration.millis(10), event -> {
+                    double angle = (littleBall.getRotate() + 1) % 360;
+                    double x = game.getInvisibleBall().getCenterX() + game.getInvisibleBall().getRadius() * Math.cos(Math.toRadians(angle));
+                    double y = game.getInvisibleBall().getCenterY() + game.getInvisibleBall().getRadius() * Math.sin(Math.toRadians(angle));
+                    littleBall.setCenterX(x);
+                    littleBall.setCenterY(y);
+                    littleBall.setRotate(angle);
+                }));
+                timeline.setCycleCount(Animation.INDEFINITE);
+                timeline.play();
+            }
+    }
+
 
     public void Back() throws Exception {
         new MainMenu().start(stage);
