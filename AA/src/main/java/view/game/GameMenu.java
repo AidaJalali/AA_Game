@@ -34,16 +34,16 @@ public class GameMenu extends Application {
     private static GameController gameController;
     private Game game;
     private Pane pane = new Pane();
+    private Scene scene;
     private Group littleBallsOnBigBall = new Group();
     private Group littleBallsForPlayer= new Group();
     private Group linesGroup = new Group();
 
     public void start(Stage stage) throws Exception {
         pane = FXMLLoader.load(this.getClass().getResource("/fxml/Game.fxml"));
-        Scene scene = new Scene(pane);
+        scene = new Scene(pane);
         scene.getStylesheets().add(css);
         initializeGame();
-        setRotationSettings();
         GameMenu.stage = stage;
         stage.setScene(scene);
         stage.show();
@@ -57,7 +57,7 @@ public class GameMenu extends Application {
         stack.setLayoutX(game.getBigBall().getCenterX() - 70);
         stack.setLayoutY(game.getBigBall().getCenterY() - 30);
         Text text = new Text("AA");
-        //TODO -> thake this part to a function and fix the bug of a text
+        //TODO -> take this part to a function and fix the bug of a text
         text.setFill(Color.WHITE);
         text.setFont(Font.font("Arial", FontWeight.BOLD, 100));
         text.setBoundsType(TextBoundsType.VISUAL);
@@ -65,6 +65,8 @@ public class GameMenu extends Application {
         stack.getChildren().add(text);
         setPlayerBalls();
         setLittleBallsOnBigBall();
+        setRotationSetting();
+        setShootingSetting();
         pane.getChildren().add(game.getBigBall());
         pane.getChildren().add(game.getInvisibleBall());
         pane.getChildren().add(stack);
@@ -108,7 +110,7 @@ public class GameMenu extends Application {
     }
 
 
-    private void setRotationSettings() {
+    private void setRotationSetting() {
         for(int i = 0;i < game.getBigBall().getLittleBalls().size();i++){
             LittleBall littleBall = game.getBigBall().getLittleBalls().get(i);
             Line line = new Line();
@@ -131,13 +133,20 @@ public class GameMenu extends Application {
         timeline.play();
     }
 
-    private void addThrowBallEvent(Scene scene) {
-        scene.setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.SPACE) {
-                throwBall();
+    public void setShootingSetting(){
+        LittleBall littleBall = game.getLittleBallsForPlayer().get(game.getLittleBallsForPlayer().size() - 1);
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(10), event -> {
+            littleBall.setCenterY(littleBall.getCenterY() - 1);
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+
+        scene.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                timeline.play();
             }
         });
     }
+
 
     public void Back() throws Exception {
         new MainMenu().start(stage);
