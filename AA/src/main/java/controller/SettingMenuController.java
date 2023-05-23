@@ -4,7 +4,7 @@ import model.User;
 
 public class SettingMenuController {
     private static int numberOfLittleBallsForPlayer = 10;
-    private static int numberOfLittleBallsOnBigBall = 20;
+    private static int numberOfLittleBallsOnBigBall = 12;
     private User currentUser;
 
     public User getCurrentUser() {
