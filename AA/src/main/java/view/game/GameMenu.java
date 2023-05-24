@@ -29,8 +29,7 @@ import model.LittleBall;
 import view.animation.ShootingAnimation;
 import view.menu.MainMenu;
 
-import static java.lang.Math.cos;
-import static java.lang.Math.sin;
+import static java.lang.Math.*;
 
 public class GameMenu extends Application {
     public static Stage stage;
@@ -84,15 +83,14 @@ public class GameMenu extends Application {
     }
 
     private void setPlayerBalls() {
-        int numberOfBalls = SettingMenuController.getNumberOfLittleBallsForPlayer();
-        for (int i = 0; i < numberOfBalls; i++) {
+        for (int i = 1; i < game.getNumberOfBallsForPlayer() - 1; i++) {
             LittleBall littleBall = new LittleBall();
             littleBall.setCenterX(game.getBigBall().getCenterX());
             littleBall.setCenterY(game.getBigBall().getCenterY());
             StackPane stack = new StackPane();
             stack.setLayoutX(game.getInvisibleBall().getCenterX());
             stack.setLayoutY(game.getInvisibleBall().getCenterY() + game.getInvisibleBall().getRadius() + 80);
-            Text text = new Text(String.valueOf(i));
+            Text text = new Text(String.valueOf(i ));
             text.setFill(Color.WHITE);
             text.setBoundsType(TextBoundsType.VISUAL);
             stack.getChildren().add(littleBall);
@@ -100,8 +98,6 @@ public class GameMenu extends Application {
             game.addLittleBallsForPlayer(stack);
             pane.getChildren().add(stack);
         }
-        for (int i = 0; i < numberOfBalls - 1; i++)
-            game.getLittleBallsForPlayer().get(i).setVisible(true);
     }
 
     public void setLittleBallsOnBigBall() {
@@ -120,21 +116,18 @@ public class GameMenu extends Application {
     private void setRotationSetting() {
         for (int i = 0; i < game.getBigBall().getLittleBalls().size(); i++) {
             LittleBall littleBall = game.getBigBall().getLittleBalls().get(i);
-            Line line = new Line();
-            line.setStartX(game.getBigBall().getCenterX());
-            line.setStartY(game.getBigBall().getCenterY());
-            line.setEndX(littleBall.getCenterX());
-            line.setEndY(littleBall.getCenterY());
+            game.addLineToBigBall(littleBall.getCenterX(),littleBall.getCenterY());
             game.getLittleBallsOnBigBall().getChildren().add(littleBall);
-            game.getLinesGroup().getChildren().add(line);
         }
         pane.getChildren().add(game.getLittleBallsOnBigBall());
         pane.getChildren().add(game.getLinesGroup());
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(30), event -> {
             double angle1 = (game.getLittleBallsOnBigBall().getRotate() + 1) % 360;
             double angle2 = (game.getLinesGroup().getRotate() + 1) % 360;
+            //double angle3 = (game.getBigBall().getRotate() + 1) % 360;
             game.getLittleBallsOnBigBall().setRotate(angle1);
             game.getLinesGroup().setRotate(angle2);
+            //game.getBigBall().setRotate(angle3);
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
