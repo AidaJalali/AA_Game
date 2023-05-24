@@ -5,6 +5,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 
@@ -17,11 +21,11 @@ public class EnterMenu extends Application{
     }
     @Override
     public void start(Stage stage) throws Exception {
-        Parent parent = FXMLLoader.load(this.getClass().getResource("/fxml/EnterMenu.fxml"));
-        Scene scene = new Scene(parent);
+        Pane pane = FXMLLoader.load(this.getClass().getResource("/fxml/EnterMenu.fxml"));
+        Scene scene = new Scene(pane);
         scene.getStylesheets().add(css);
-        stage.setScene(scene);
         EnterMenu.stage = stage;
+        stage.setScene(scene);
         stage.show();
         }
 

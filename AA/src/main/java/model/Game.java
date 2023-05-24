@@ -26,7 +26,7 @@ public class Game {
         littleBall.setCenterX(x);
         littleBall.setCenterY(y);
         littleBallsOnBigBall.getChildren().add(littleBall);
-        System.out.println("little ball added");
+
     }
 
     public void addLineToBigBall(double x , double y){
