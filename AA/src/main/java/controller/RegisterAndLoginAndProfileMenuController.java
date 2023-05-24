@@ -5,6 +5,7 @@ import model.User;
 public class RegisterAndLoginAndProfileMenuController {
     private User currentUser;
     public String register(String username , String password){
+        System.out.println("inside register");
         if (DataBase.getInstance().getUserByUsername(username)!= null) return "User already exists";
         String usernameError = checkUsernameError(username);
         String passwordError = checkPasswordError(password);
