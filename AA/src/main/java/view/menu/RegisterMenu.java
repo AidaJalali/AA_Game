@@ -4,24 +4,31 @@ import controller.MainMenuController;
 import controller.RegisterAndLoginAndProfileMenuController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import model.DataBase;
+import model.User;
 
 public class RegisterMenu extends Application {
     public static Stage stage;
     public String css = this.getClass().getResource("/css/style.css").toExternalForm();
-    public TextField username;
-    public PasswordField password;
-    public Label Error;
+    private TextField username;
+    private PasswordField password;
     private static RegisterAndLoginAndProfileMenuController registerAndLoginAndProfileMenuController;
+    private Pane pane = new Pane();
+    private Label unsuccessful;
+    private Label successful;
     public void start(Stage stage) throws Exception {
-        Parent parent = FXMLLoader.load(this.getClass().getResource("/fxml/RegisterMenu.fxml"));
-        Scene scene = new Scene(parent);
+        pane = FXMLLoader.load(this.getClass().getResource("/fxml/RegisterMenu.fxml"));
+        Scene scene = new Scene(pane);
         scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
@@ -29,20 +36,28 @@ public class RegisterMenu extends Application {
     }
 
     public void register(ActionEvent event) throws Exception {
-        String username = this.username.getText();
-        String password = this.password.getText();
+        String username = String.valueOf(this.username.getText());
+        String password = String.valueOf(this.password.getText());
         String message = registerAndLoginAndProfileMenuController.register(username,password);
-        if(!message.equals("Login was successful")){
-            reset();
-            Error.setText(message);
+        if(message == null){
+            unsuccessful.setVisible(true);
+            return;
         }
-        Error.setText("Login was successful");
-        enterMainMenu();
+        if(!message.equals("Register was successful")){
+            unsuccessful.setVisible(true);
+            reset();
+            ;
+            return;
+        }
+        successful.setVisible(true);
+        User user = new User(username , password);
+        DataBase.getInstance().addUser(user);
+        DataBase.getInstance().saveData();
     }
 
     public void reset(){
-        this.username.setText("");
-        this.password.setText("");
+        username.setText("");
+        password.setText("");
     }
 
     public void enterMainMenu() throws Exception {

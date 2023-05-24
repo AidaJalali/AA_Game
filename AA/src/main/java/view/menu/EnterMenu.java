@@ -21,8 +21,8 @@ public class EnterMenu extends Application{
         Scene scene = new Scene(parent);
         scene.getStylesheets().add(css);
         stage.setScene(scene);
-        stage.show();
         EnterMenu.stage = stage;
+        stage.show();
         }
 
         public void enterLoginMenu() throws Exception {

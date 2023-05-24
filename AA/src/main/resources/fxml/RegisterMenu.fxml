@@ -12,27 +12,24 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.RegisterMenu">
-    <children>
-        <AnchorPane prefHeight="700.0" prefWidth="900.0">
-            <children>
-                <Sphere drawMode="LINE" layoutX="181.0" layoutY="518.0" radius="150.0" />
-            <Text layoutX="209.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your username and password to login" textAlignment="CENTER" wrappingWidth="464.0">
-               <font>
-                  <Font name="Modern No. 20" size="24.0" />
-               </font>
-            </Text>
-                    <VBox alignment="CENTER" layoutX="74.0" layoutY="128.0" prefHeight="307.0" prefWidth="774.0" spacing="20">
-               <Label prefHeight="50.0" prefWidth="302.0" />
-                        <TextField fx:id="username" maxWidth="300" promptText="username" styleClass="text-input" />
-                        <PasswordField fx:id="password" maxWidth="300" prefHeight="41.0" prefWidth="300.0" promptText="password" styleClass="text-input2" />
-                        <HBox alignment="CENTER" spacing="20">
-                            <Button onMouseClicked="#register" text="submit" />
-                            <Button onMouseClicked="#reset" text="reset" />
-                        </HBox>
-                    </VBox>
-            <Button layoutX="653.0" layoutY="453.0" mnemonicParsing="false" onMouseClicked="#backToEnterMenu" text="Back" />
+    <AnchorPane prefHeight="700.0" prefWidth="900.0">
+        <Sphere drawMode="LINE" layoutX="181.0" layoutY="518.0" radius="150.0" />
+        <Text layoutX="209.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your username and password to Register" textAlignment="CENTER" wrappingWidth="482.4000244140625">
+            <font>
+                <Font name="Modern No. 20" size="24.0" />
+            </font>
+        </Text>
+        <VBox alignment="CENTER" layoutX="74.0" layoutY="128.0" prefHeight="307.0" prefWidth="774.0" spacing="20">
+         <Label fx:id="unsuccessful" prefHeight="35.0" prefWidth="127.0" text="Register was successful" textAlignment="RIGHT" textFill="#3b9626" visible="false" />
+            <Label fx:id="successful" prefHeight="35.0" prefWidth="141.0" text="Register was unsuccessful" textAlignment="RIGHT" textFill="RED" visible="false" />
+            <TextField fx:id="username" maxWidth="300" promptText="username" styleClass="text-input" />
+            <PasswordField fx:id="password" maxWidth="300" prefHeight="41.0" prefWidth="300.0" promptText="password" styleClass="text-input2=" />
+            <HBox alignment="CENTER" spacing="20">
+                <Button onMouseClicked="#register" text="submit" />
+                <Button onMouseClicked="#reset" text="reset" />
+            </HBox>
+        </VBox>
+        <Button layoutX="653.0" layoutY="453.0" mnemonicParsing="false" onMouseClicked="#backToEnterMenu" text="Back" />
 
-            </children>
-        </AnchorPane>
-    </children>
+    </AnchorPane>
 </AnchorPane>

@@ -54,5 +54,4 @@ public class SettingMenu extends Application {
         SettingMenu.settingMenuController = settingMenuController;
     }
 
-
 }

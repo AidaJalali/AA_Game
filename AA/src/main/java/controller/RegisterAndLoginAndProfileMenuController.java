@@ -48,13 +48,13 @@ public class RegisterAndLoginAndProfileMenuController {
     }
 
     public String checkUsernameError(String username){
-        if(!username.matches("\\S+")) return "Username is invalid!";
+        if(!username.matches(".+")) return "Username is invalid!";
         if(username.length() < 5) return "Username is too short!";
         if(username.length() > 10) return "Username is too long!";
         return null;
     }
     public String checkPasswordError(String password){
-        if(!password.matches("\\S+")) return "Username is invalid!";
+        if(!password.matches(".+")) return "Username is invalid!";
         if(password.length() < 5) return "Password is week!";
         return null;
     }

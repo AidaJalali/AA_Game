@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Sphere?>
 
 <AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.SettingMenu">
     <children>
-        <Sphere drawMode="LINE" layoutX="184.0" layoutY="514.0" radius="150.0" />
-      <VBox layoutX="241.0" layoutY="25.0" prefHeight="318.0" prefWidth="418.0" spacing="20.0">
+        <Sphere drawMode="LINE" layoutX="99.0" layoutY="592.0" radius="50.0" />
+      <Button layoutX="245.0" layoutY="615.0" mnemonicParsing="false" onMouseClicked="#backToMainMenu" prefHeight="26.0" prefWidth="376.0" text="Back" />
+      <Sphere drawMode="LINE" layoutX="769.0" layoutY="592.0" radius="50.0" />
+      <Button layoutX="241.0" layoutY="565.0" mnemonicParsing="false" onMouseClicked="#goToMapPage" prefHeight="26.0" prefWidth="384.0" text="Set Map" />
+      <CheckBox layoutX="149.0" layoutY="139.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="135.0" text="Change Buttons" />
+      <HBox layoutX="277.0" layoutY="255.0" prefHeight="40.0" prefWidth="312.0" spacing="50.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Set Difficulty" onMouseClicked="#setDifficulty" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Set Map" onMouseClicked="#goToMapPage"/>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Set Little Ball Numbers" onMouseClicked="#setLittleNumbers"/>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Mute" onMouseClicked="#setMute" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Set Theme" onMouseClicked="#setTheme"/>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Change Language" onMouseClicked="#changeLanguage" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Change Buttons" onMouseClicked="#changeButtons"/>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="439.0" text="Back" onMouseClicked="#backToMainMenu" />
+            <RadioButton mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" text="Persian" />
+            <RadioButton mnemonicParsing="false" prefHeight="51.0" prefWidth="162.0" text="English" />
          </children>
-      </VBox>
+      </HBox>
+      <CheckBox layoutX="375.0" layoutY="139.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="135.0" text="Mute" />
+      <CheckBox layoutX="560.0" layoutY="112.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="194.0" text="Change Theme" />
+      <TextField layoutX="351.0" layoutY="475.0" />
+      <TextArea layoutX="344.0" layoutY="411.0" prefHeight="40.0" prefWidth="164.0" text="Enter number of little balls" />
+      <TextField layoutX="387.0" layoutY="42.0" prefHeight="46.0" prefWidth="92.0" text="Setting Menu" />
     </children>
 
 

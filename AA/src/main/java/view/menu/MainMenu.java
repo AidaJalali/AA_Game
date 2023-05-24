@@ -24,7 +24,7 @@ public class MainMenu extends Application {
 
     public void startGame(ActionEvent event) throws Exception {
         GameController gameController = new GameController();
-        gameController.setCurrentUser(gameController.getCurrentUser());
+        //gameController.setCurrentUser(gameController.getCurrentUser());
         GameMenu.setGameController(gameController);
         new GameMenu().start(stage);
     }
@@ -34,21 +34,21 @@ public class MainMenu extends Application {
 
     public void enterProfileMenu() throws Exception{
         RegisterAndLoginAndProfileMenuController controller = new RegisterAndLoginAndProfileMenuController();
-        controller.setCurrentUser(mainMenuController.getCurrentUser());
+        //controller.setCurrentUser(mainMenuController.getCurrentUser());
         ProfileMenu.setProfileMenuController(controller);
         new ProfileMenu().start(stage);
     }
 
     public void enterSettingMenu() throws Exception{
         SettingMenuController settingMenuController = new SettingMenuController();
-        settingMenuController.setCurrentUser(mainMenuController.getCurrentUser());
+        //settingMenuController.setCurrentUser(mainMenuController.getCurrentUser());
         SettingMenu.setSettingMenuController(settingMenuController);
         new SettingMenu().start(stage);
     }
 
     public void enterScoreTable() throws Exception{
         ScoreMenuController scoreMenuController = new ScoreMenuController();
-        scoreMenuController.setCurrentUser(mainMenuController.getCurrentUser());
+        //scoreMenuController.setCurrentUser(mainMenuController.getCurrentUser());
         ScoreMenu.setScoreMenuController(scoreMenuController);
         new ScoreMenu().start(stage);
     }
@@ -63,4 +63,5 @@ public class MainMenu extends Application {
     public static void setMainMenuController(MainMenuController mainMenuController) {
         MainMenu.mainMenuController = mainMenuController;
     }
+
 }

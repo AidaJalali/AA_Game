@@ -21,7 +21,7 @@ public class DataBase {
         private void loadData() {
             Reader reader;
             try {
-                reader = new FileReader("data.json");
+                reader = new FileReader("C:/Users/Notebook/Desktop/AA.json");
             } catch (FileNotFoundException e) {
                 return;
             }
@@ -36,7 +36,7 @@ public class DataBase {
             Gson gson = new Gson();
             String json = gson.toJson(users);
             try {
-                FileWriter myWriter = new FileWriter("data.json");
+                FileWriter myWriter = new FileWriter("C:/Users/Notebook/Desktop/AA.json");
                 myWriter.write(json);
                 myWriter.close();
             } catch (IOException e) {

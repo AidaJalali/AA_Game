@@ -33,10 +33,8 @@ public class LoginMenu extends Application {
         String message = registerAndLoginAndProfileMenuController.login(username , password);
         if(!message.equals("Login was successful")){
             reset();
-            label.isVisible();
             label.setText(message);
         }
-        label.isVisible();
         label.setText("Login was successful");
         enterMainMenu();
     }
