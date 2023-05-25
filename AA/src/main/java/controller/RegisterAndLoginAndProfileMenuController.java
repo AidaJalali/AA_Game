@@ -2,10 +2,11 @@ package controller;
 import model.DataBase;
 import model.User;
 
+import java.io.FileNotFoundException;
+
 public class RegisterAndLoginAndProfileMenuController {
     private User currentUser;
-    public String register(String username , String password){
-        System.out.println("inside register");
+    public String register(String username , String password)  {
         if (DataBase.getInstance().getUserByUsername(username)!= null) return "User already exists";
         String usernameError = checkUsernameError(username);
         String passwordError = checkPasswordError(password);
@@ -13,6 +14,7 @@ public class RegisterAndLoginAndProfileMenuController {
         if(passwordError != null) return passwordError;
         User user = new User(username, password);
         DataBase.getInstance().addUser(user);
+        DataBase.getInstance().saveData();
         return "Registration was successful";
     }
 
@@ -26,13 +28,11 @@ public class RegisterAndLoginAndProfileMenuController {
 
     public String changeUsername(String username){
         if(DataBase.getInstance().getUserByUsername(username) != null) return "User with this username already exists";
-        if(currentUser.getUsername().equals(username)) return "Duplicate username";
         String usernameError = checkUsernameError(username);
         if(usernameError != null) return usernameError;
         currentUser.setUsername(username);
         DataBase.getInstance().saveData();
         return "Username changed successfully";
-
     }
     public String changePassword(String password){
         String passwordError = checkPasswordError(password);
@@ -51,7 +51,7 @@ public class RegisterAndLoginAndProfileMenuController {
     public String checkUsernameError(String username){
         if(!username.matches(".+")) return "Username is invalid!";
         if(username.length() < 5) return "Username is too short!";
-        if(username.length() > 10) return "Username is too long!";
+        if(username.length() > 20) return "Username is too long!";
         return null;
     }
     public String checkPasswordError(String password){

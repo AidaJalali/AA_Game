@@ -1,25 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Sphere?>
-
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.ProfileMenu">
-    <children>
-        <Sphere drawMode="LINE" layoutX="164.0" layoutY="536.0" radius="150.0" />
-      <VBox layoutX="199.0" layoutY="112.0" prefHeight="274.0" prefWidth="506.0" spacing="20.0">
-         <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="500.0" text="Change Username" onMouseClicked="#changeUsername"/>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="500.0" text="Change Password" onMouseClicked="#changePassword" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="500.0" text="Exit From Account" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="500.0" text="Delete Account" onMouseClicked="#deleteAccount"/>
-            <Accordion />
-            <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="500.0" text="Set Avatar" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="500.0" text="Back" />
-         </children>
-      </VBox>
-    </children>
-
-</AnchorPane>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<Pane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="view.menu.ProfileMenu">
+    <Sphere drawMode="LINE" layoutX="725.0" layoutY="75.0" radius="75"/>
+    <Sphere drawMode="LINE" layoutX="75.0" layoutY="75.0" radius="75"/>
+    <VBox layoutX="168.0" layoutY="93.0" prefHeight="503.0" prefWidth="431.0" spacing="20.0">
+        <Text text="Enter your new username" textAlignment="CENTER" wrappingWidth="428.2132568359375">
+            <font>
+                <Font size="22.0"/>
+            </font>
+        </Text>
+        <TextField fx:id="newUsername" prefHeight="26.0" prefWidth="326.0"/>
+        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="430.0" text="Change username"
+                textFill="#ea0a0a" onMouseClicked="#changeUsername"/>
+        <Text onMouseClicked="#changePassword" text="Enter your new password" textAlignment="CENTER"
+              wrappingWidth="430.66058349609375">
+            <font>
+                <Font size="21.0"/>
+            </font>
+        </Text>
+        <TextField fx:id="newPassword"/>
+        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="435.0" text="Change Password"
+                textFill="#d70c0c" onMouseClicked="#changePassword"/>
+        <Button layoutX="40.0" mnemonicParsing="false" onMouseClicked="#goToLoginMenu" prefHeight="25.0"
+                prefWidth="500.0" text="Exit From Account"/>
+        <Button mnemonicParsing="false" onMouseClicked="#deleteAccount" prefHeight="25.0" prefWidth="500.0"
+                text="Delete Account"/>
+        <Button mnemonicParsing="false" onMouseClicked="#goToAvatarMenu" prefHeight="26.0" prefWidth="431.0"
+                text="Set Avatar"/>
+        <Button mnemonicParsing="false" onMouseClicked="#backToMainMenu" prefHeight="25.0" prefWidth="500.0"
+                text="Back"/>
+    </VBox>
+</Pane>

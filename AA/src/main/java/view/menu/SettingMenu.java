@@ -2,47 +2,51 @@ package view.menu;
 
 import controller.SettingMenuController;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import view.menu.settingMenuPages.MapPage;
 
 public class SettingMenu extends Application {
     public static Stage stage;
-    public static int getNumberOfBallsForGame;
     public String css = this.getClass().getResource("/css/style.css").toExternalForm();
     private static SettingMenuController settingMenuController;
     public void start(Stage stage) throws Exception {
-        Parent parent = FXMLLoader.load(EnterMenu.class.getResource("/fxml/SettingMenu.fxml"));
-        Scene scene = new Scene(parent);
+        AnchorPane anchorPane = FXMLLoader.load(this.getClass().getResource("/fxml/SettingMenu.fxml"));
+        Scene scene = new Scene(anchorPane);
         scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
         SettingMenu.stage = stage;
     }
 
-    public void setDifficulty(ActionEvent event){}
+    public void setDifficulty(MouseEvent mouseEvent){}
 
-    public void goToMapPage(ActionEvent event) throws Exception {
-        MapPage.setSettingMenuController(settingMenuController);
-        new MapPage().start(stage);
+    public void selectMap1(MouseEvent mouseEvent) throws Exception {
+        SettingMenuController.setNumberOfLittleBallsOnBigBall(6);
     }
 
-    public void setLittleNumbers(ActionEvent event){
-
+    public void selectMap2(MouseEvent mouseEvent)throws Exception{
+        SettingMenuController.setNumberOfLittleBallsOnBigBall(12);
     }
 
-    public void setMute(ActionEvent event){}
+    public void selectMap3(MouseEvent mouseEvent)throws Exception{
+        SettingMenuController.setNumberOfLittleBallsOnBigBall(20);
+    }
 
-    public void setTheme(ActionEvent event){}
+    public void setLittleNumbers(MouseEvent mouseEvent){
 
-    public void changeLanguage(ActionEvent event){}
+    }
+    public void setMute(MouseEvent mouseEvent){}
 
-    public void changeButtons(ActionEvent event){}
+    public void setTheme(MouseEvent mouseEvent){}
 
-    public void backToMainMenu(ActionEvent event) throws Exception {
+    public void changeLanguage(MouseEvent mouseEvent){}
+
+    public void changeButtons(MouseEvent mouseEvent){}
+
+    public void backToMainMenu(MouseEvent mouseEvent) throws Exception {
         new MainMenu().start(stage);
     }
 

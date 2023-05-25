@@ -63,8 +63,8 @@ public class GameMenu extends Application {
         GameController.setGame(game);
         this.game = game;
         StackPane stack = new StackPane();
-        stack.setLayoutX(game.getBigBall().getCenterX() - 60);
-        stack.setLayoutY(game.getBigBall().getCenterY() - 30);
+        stack.setLayoutX(game.getBigBall().getCenterX() - 50);
+        stack.setLayoutY(game.getBigBall().getCenterY() - 20);
         Text text = new Text("aa");
         text.setFill(Color.WHITE);
         text.setFont(Font.font("Arial", FontWeight.BOLD, 100));
@@ -89,7 +89,7 @@ public class GameMenu extends Application {
             littleBall.setCenterY(game.getBigBall().getCenterY());
             StackPane stack = new StackPane();
             stack.setLayoutX(game.getInvisibleBall().getCenterX());
-            stack.setLayoutY(game.getInvisibleBall().getCenterY() + game.getInvisibleBall().getRadius() + 80);
+            stack.setLayoutY(game.getInvisibleBall().getCenterY() + game.getInvisibleBall().getRadius() + 40);
             Text text = new Text(String.valueOf(i ));
             text.setFill(Color.WHITE);
             text.setBoundsType(TextBoundsType.VISUAL);

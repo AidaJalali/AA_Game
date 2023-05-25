@@ -21,7 +21,7 @@ public class DataBase {
         private void loadData() {
             Reader reader;
             try {
-                reader = new FileReader("C:/Users/Notebook/Desktop/AA.json");
+                reader = new FileReader("data.json");
             } catch (FileNotFoundException e) {
                 return;
             }
@@ -32,17 +32,21 @@ public class DataBase {
 
         }
 
-        public void saveData() {
+    public void saveData() {
+            loadData();
+        try {
             Gson gson = new Gson();
             String json = gson.toJson(users);
             try {
-                FileWriter myWriter = new FileWriter("C:/Users/Notebook/Desktop/AA.json");
+                FileWriter myWriter = new FileWriter("data.json");
                 myWriter.write(json);
                 myWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        } catch (Exception e) {
         }
+    }
 
 
         public static DataBase getInstance() {
@@ -71,11 +75,7 @@ public class DataBase {
         }
 
         public void deleteUserByUsername(String username){
-            for(User user: users) {
-                if(user.getUsername().equals(username)) {
-                    users.remove(user);
-                }
-            }
+            users.removeIf(user -> user.getUsername().equals(username));
         }
 
         private class sortUsers implements Comparator<User> {

@@ -1,15 +1,14 @@
 package model;
-
-import java.util.PrimitiveIterator;
-
 public class User {
     private String username;
     private String password;
+    private String profileAddress;
     private int score;
 
-    public User(String username, String password) {
+    public User(String username, String password){
         this.username = username;
         this.password = password;
+        this.profileAddress = "/fxml/images/1.png";
         this.score = 0;
     }
 
@@ -35,5 +34,13 @@ public class User {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public String getProfileAddress() {
+        return profileAddress;
+    }
+
+    public void setProfileAddress(String profileAddress) {
+        this.profileAddress = profileAddress;
     }
 }

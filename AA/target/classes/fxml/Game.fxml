@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.game.GameMenu">
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.game.GameMenu">
    <children>
       <Button layoutX="24.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#Back" text="Menu" />
    </children>

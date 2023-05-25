@@ -1,42 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Sphere?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.LoginMenu">
-    <children>
-        <AnchorPane prefHeight="700.0" prefWidth="900.0">
-            <children>
-                <Sphere drawMode="LINE" layoutX="194.0" layoutY="500.0" radius="150.0" />
-                <Text layoutX="212.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your username and password to login" textAlignment="CENTER" wrappingWidth="475.20001220703125" AnchorPane.bottomAnchor="560.984001159668" AnchorPane.leftAnchor="212.0" AnchorPane.rightAnchor="212.79998779296875" AnchorPane.topAnchor="115.01600074768066">
-                    <font>
-                        <Font name="Modern No. 20" size="24.0" />
-                    </font>
-                </Text>
-                <VBox alignment="CENTER" layoutX="143.0" layoutY="149.0" prefHeight="241.0" prefWidth="618.0" spacing="20">
-                    <TextField fx:id="username" maxWidth="336.0" prefHeight="48.0" prefWidth="336.0" promptText="username" styleClass="text-input" />
-                    <PasswordField fx:id="password" maxWidth="337.0" prefHeight="46.0" prefWidth="337.0" promptText="password" styleClass="text-input2" />
-                    <HBox alignment="CENTER" spacing="20">
-                        <Button onMouseClicked="#login" text="submit" />
-                        <Button onMouseClicked="#reset" text="reset" />
-                    </HBox>
-                </VBox>
-                <Button layoutX="669.0" layoutY="371.0" mnemonicParsing="false" onMouseClicked="#backToEnterMenu" text="Back" />
-            <Label disable="true" layoutX="249.0" layoutY="131.0" prefHeight="18.0" prefWidth="189.0">
-               <effect>
-                  <Glow />
-               </effect>
-            </Label>
-            </children>
-        </AnchorPane>
-    </children>
-</AnchorPane>
+<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="view.menu.LoginMenu">
+    <left>
+        <Sphere drawMode="LINE" layoutX="219.0" layoutY="464.0" radius="75"/>
+    </left>
+    <right>
+        <Sphere drawMode="LINE" layoutX="219.0" layoutY="464.0" radius="75"/>
+    </right>
+    <center>
+        <VBox alignment="CENTER" fillWidth="false" spacing="15">
+            <Text text="Please enter your Username and Password" wrappingWidth="348.3966052532196">
+                <font>
+                    <Font size="20.0"/>
+                </font>
+            </Text>
+            <TextField alignment="CENTER" promptText="username" fx:id="username"/>
+            <PasswordField alignment="CENTER" promptText="password" fx:id="password"/>
+            <Separator prefHeight="10"/>
+            <Button onMouseClicked="#login" prefWidth="160" text="Login"/>
+            <Button onMouseClicked="#backToEnterMenu" prefWidth="160" text="Back"/>
+        </VBox>
+    </center>
+</BorderPane>

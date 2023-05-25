@@ -40,3 +40,7 @@ Label {
     -fx-text-fill: #a2a0a0;
 }
 
+Text{
+    -fx-font-family: "Modern No. 20";
+}
+

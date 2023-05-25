@@ -32,11 +32,12 @@ public class ShootingAnimation extends Transition {
         if(shootingBallHitLittleBall(littleBall)){
         }
         if(littleBall.getLayoutY() == (game.getInvisibleBall().getCenterY() + game.getInvisibleBall().getRadius())){
-            this.stop();
             pane.getChildren().remove(littleBall);
-            game.addLittleBallToBigBall(littleBall.getLayoutX() , littleBall.getLayoutY());
-            game.addLineToBigBall(littleBall.getLayoutX() , littleBall.getLayoutY() );
+            game.getBigBall().setVisible(false);
+            game.addLittleBallToBigBall(400 , game.getBigBall().getCenterY() + game.getInvisibleBall().getRadius());
+            game.addLineToBigBall(400 , game.getBigBall().getCenterY() + game.getInvisibleBall().getRadius() );
             game.getLittleBallsForPlayer().remove(littleBall);
+            this.stop();
         }
     }
 

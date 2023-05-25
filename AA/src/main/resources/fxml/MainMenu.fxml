@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.shape.Sphere?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.MainMenu">
-        <children>
-            <Sphere drawMode="LINE" layoutX="211.0" layoutY="500.0" radius="150.0" />
-      <Button layoutX="149.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#enterScoreTable" prefHeight="26.0" prefWidth="588.0" text="ScoreTable" />
-      <Button layoutX="149.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#enterSettingMenu" prefHeight="26.0" prefWidth="588.0" text="SettingMenu" />
-      <Button layoutX="149.0" layoutY="83.0" mnemonicParsing="false" onMouseClicked="#startGame" prefHeight="26.0" prefWidth="588.0" text="Start Game" >
-         <font>
-            <Font name="Modern No. 20" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="149.0" layoutY="167.0" mnemonicParsing="false" onMouseClicked="#enterProfileMenu" prefHeight="26.0" prefWidth="588.0" text="ProfileMenu" />
-      <Button layoutX="149.0" layoutY="124.0" mnemonicParsing="false" onMouseClicked="#resumeGame" prefHeight="26.0" prefWidth="588.0" text="Resume Game" />
-      <Button layoutX="149.0" layoutY="299.0" mnemonicParsing="false" onMouseClicked="#exit" prefHeight="26.0" prefWidth="588.0" text="Exit" />
-        </children>
-</AnchorPane>
+<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.MainMenu">
+    <left>
+        <Sphere drawMode="LINE" layoutX="219.0" layoutY="464.0" radius="75" />
+    </left>
+    <right>
+        <Sphere drawMode="LINE" layoutX="219.0" layoutY="464.0" radius="75" />
+    </right>
+
+    <center>
+        <VBox alignment="CENTER" fillWidth="false" prefHeight="403.0" prefWidth="600.0" spacing="10">
+         <Rectangle fx:id="profile" arcHeight="5.0" arcWidth="5.0" fill="#feffff" height="118.0" stroke="BLACK" strokeType="INSIDE" width="144.0" />
+            <Button layoutX="149.0" layoutY="83.0" mnemonicParsing="false" onMouseClicked="#startGame" prefHeight="26.0" prefWidth="588.0" text="Start Game" />
+            <Button layoutX="149.0" layoutY="124.0" mnemonicParsing="false" onMouseClicked="#resumeGame" prefHeight="26.0" prefWidth="588.0" text="Resume Game" />
+            <Button layoutX="149.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#enterScoreTable" prefHeight="26.0" prefWidth="588.0" text="ScoreTable" />
+            <Button layoutX="149.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#enterSettingMenu" prefHeight="26.0" prefWidth="588.0" text="SettingMenu" />
+            <Button layoutX="149.0" layoutY="167.0" mnemonicParsing="false" onMouseClicked="#enterProfileMenu" prefHeight="26.0" prefWidth="588.0" text="ProfileMenu" />
+            <Button layoutX="149.0" layoutY="299.0" mnemonicParsing="false" onMouseClicked="#exit" prefHeight="26.0" prefWidth="588.0" text="Exit" />
+        </VBox>
+    </center>
+</BorderPane>

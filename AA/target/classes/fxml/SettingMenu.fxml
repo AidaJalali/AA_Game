@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Sphere?>
-
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.SettingMenu">
+<?import javafx.scene.text.Text?>
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="view.menu.SettingMenu">
     <children>
-        <Sphere drawMode="LINE" layoutX="99.0" layoutY="592.0" radius="50.0" />
-      <Button layoutX="245.0" layoutY="615.0" mnemonicParsing="false" onMouseClicked="#backToMainMenu" prefHeight="26.0" prefWidth="376.0" text="Back" />
-      <Sphere drawMode="LINE" layoutX="769.0" layoutY="592.0" radius="50.0" />
-      <Button layoutX="241.0" layoutY="565.0" mnemonicParsing="false" onMouseClicked="#goToMapPage" prefHeight="26.0" prefWidth="384.0" text="Set Map" />
-      <CheckBox layoutX="149.0" layoutY="139.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="135.0" text="Change Buttons" />
-      <HBox layoutX="277.0" layoutY="255.0" prefHeight="40.0" prefWidth="312.0" spacing="50.0">
-         <children>
-            <RadioButton mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" text="Persian" />
-            <RadioButton mnemonicParsing="false" prefHeight="51.0" prefWidth="162.0" text="English" />
-         </children>
-      </HBox>
-      <CheckBox layoutX="375.0" layoutY="139.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="135.0" text="Mute" />
-      <CheckBox layoutX="560.0" layoutY="112.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="194.0" text="Change Theme" />
-      <TextField layoutX="351.0" layoutY="475.0" />
-      <TextArea layoutX="344.0" layoutY="411.0" prefHeight="40.0" prefWidth="164.0" text="Enter number of little balls" />
-      <TextField layoutX="387.0" layoutY="42.0" prefHeight="46.0" prefWidth="92.0" text="Setting Menu" />
+        <Sphere drawMode="LINE" layoutX="50.0" layoutY="50.0" radius="50.0"/>
+        <Sphere drawMode="LINE" layoutX="755.0" layoutY="64.0" radius="50.0"/>
+        <Button layoutX="211.0" layoutY="519.0" mnemonicParsing="false" onMouseClicked="#backToMainMenu"
+                prefHeight="26.0" prefWidth="384.0" text="Back"/>
+        <TextField layoutX="253.0" layoutY="340.0"/>
+        <HBox layoutX="137.0" layoutY="114.0" prefHeight="58.0" prefWidth="562.0">
+            <children>
+                <CheckBox mnemonicParsing="false" prefHeight="46.0" prefWidth="168.0" text="Change Buttons"/>
+                <CheckBox mnemonicParsing="false" prefHeight="46.0" prefWidth="135.0" text="Mute"/>
+                <CheckBox mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Change Theme"/>
+                <CheckBox mnemonicParsing="false" prefHeight="46.0" prefWidth="115.0" text="Persian"/>
+            </children>
+        </HBox>
+        <Text layoutX="338.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Balls"
+              wrappingWidth="112.00000000000011"/>
+        <Sphere drawMode="LINE" layoutX="50.0" layoutY="545.0" radius="50.0"/>
+        <Sphere drawMode="LINE" layoutX="749.0" layoutY="545.0" radius="50.0"/>
     </children>
 
 

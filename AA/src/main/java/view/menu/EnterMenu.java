@@ -23,8 +23,7 @@ public class EnterMenu extends Application {
                 new URL(LoginMenu.class.getResource("/fxml/EnterMenu.fxml").toExternalForm()));
         EnterMenu.stage = stage;
         Scene scene = new Scene(root);
-        //ToDO
-        //changeStyleScene();
+        scene.getStylesheets().add(this.getClass().getResource("/css/style.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
@@ -35,7 +34,7 @@ public class EnterMenu extends Application {
     }
 
     public void enterRegisterMenu() throws Exception {
-        LoginMenu.setRegisterAndLoginAndProfileMenuController(new RegisterAndLoginAndProfileMenuController());
+        RegisterMenu.setRegisterAndLoginAndProfileMenuController(new RegisterAndLoginAndProfileMenuController());
         new RegisterMenu().start(stage);
     }
 
@@ -45,6 +44,9 @@ public class EnterMenu extends Application {
         new MainMenu().start(stage);
     }
 
+    public void exit(){
+        System.exit(0);
+    }
 
 }
 
