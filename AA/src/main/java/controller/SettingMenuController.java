@@ -3,9 +3,9 @@ package controller;
 import model.User;
 
 public class SettingMenuController {
-    private static int numberOfLittleBallsForPlayer = 10;
-    private static int numberOfLittleBallsOnBigBall = 12;
     private User currentUser;
+    private int numberOfLittleBallsForPlayer = 10;
+    private int numberOfLittleBallsOnBigBall = 12;
 
     public User getCurrentUser() {
         return currentUser;
@@ -15,19 +15,19 @@ public class SettingMenuController {
         this.currentUser = currentUser;
     }
 
-    public static int getNumberOfLittleBallsForPlayer() {
+    public int getNumberOfLittleBallsForPlayer() {
         return numberOfLittleBallsForPlayer;
     }
 
-    public static void setNumberOfLittleBallsForPlayer(int numberOfLittleBallsForPlayer) {
-        SettingMenuController.numberOfLittleBallsForPlayer = numberOfLittleBallsForPlayer;
+    public void setNumberOfLittleBallsForPlayer(int numberOfLittleBallsForPlayer) {
+        this.numberOfLittleBallsForPlayer = numberOfLittleBallsForPlayer;
     }
 
-    public static int getNumberOfLittleBallsOnBigBall() {
+    public int getNumberOfLittleBallsOnBigBall() {
         return numberOfLittleBallsOnBigBall;
     }
 
-    public static void setNumberOfLittleBallsOnBigBall(int numberOfLittleBallsOnBigBall) {
-        SettingMenuController.numberOfLittleBallsOnBigBall = numberOfLittleBallsOnBigBall;
+    public void setNumberOfLittleBallsOnBigBall(int numberOfLittleBallsOnBigBall) {
+        this.numberOfLittleBallsOnBigBall = numberOfLittleBallsOnBigBall;
     }
 }

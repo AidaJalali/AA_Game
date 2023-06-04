@@ -14,6 +14,11 @@ Button{
     -fx-font-family: "Modern No. 20";
 }
 
+Button:hover {
+    -fx-background-color: #000000;
+    -fx-text-fill: whitesmoke;
+}
+
 TextField{
     -fx-max-width: 300;
     -fx-min-width: 300;
@@ -42,5 +47,11 @@ Label {
 
 Text{
     -fx-font-family: "Modern No. 20";
+}
+
+
+Label{
+    -fx-font-family: "Modern No. 20";
+    -fx-text-fill: #070707;
 }
 

@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.shape.Sphere?>
 
-<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.MainMenu">
+<BorderPane prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.MainMenu">
     <left>
         <Sphere drawMode="LINE" layoutX="219.0" layoutY="464.0" radius="75" />
     </left>

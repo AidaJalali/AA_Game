@@ -1,9 +1,15 @@
 package model;
+
+import controller.SettingMenuController;
+import view.game.Game;
+
 public class User {
     private String username;
     private String password;
     private String profileAddress;
     private int score;
+    private Game game;
+    private SettingMenuController settingMenuController = new SettingMenuController();
 
     public User(String username, String password){
         this.username = username;
@@ -28,6 +34,14 @@ public class User {
         this.password = password;
     }
 
+    public String getProfileAddress() {
+        return profileAddress;
+    }
+
+    public void setProfileAddress(String profileAddress) {
+        this.profileAddress = profileAddress;
+    }
+
     public int getScore() {
         return score;
     }
@@ -36,11 +50,19 @@ public class User {
         this.score = score;
     }
 
-    public String getProfileAddress() {
-        return profileAddress;
+    public SettingMenuController getSettingMenuController() {
+        return settingMenuController;
     }
 
-    public void setProfileAddress(String profileAddress) {
-        this.profileAddress = profileAddress;
+    public void setSettingMenuController(SettingMenuController settingMenuController) {
+        this.settingMenuController = settingMenuController;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
     }
 }

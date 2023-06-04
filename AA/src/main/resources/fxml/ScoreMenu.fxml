@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.shape.Sphere?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="view.menu.ScoreMenu"
-            prefHeight="600" prefWidth="800">
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
 
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.ScoreMenu">
+   <children>
+      <TableView layoutX="266.0" layoutY="259.0" prefHeight="259.0" prefWidth="234.0">
+        <columns>
+          <TableColumn prefWidth="93.60003662109375" text="C1" />
+          <TableColumn prefWidth="56.7999267578125" text="C2" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="194.0" fitWidth="221.0" layoutX="288.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/podium.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="116.0" fitWidth="186.0" layoutX="65.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="350.0" layoutY="46.0" text="numberOne" />
+      <Label layoutX="431.0" layoutY="104.0" text="numberThree" />
+      <Label layoutX="268.0" layoutY="104.0" text="numberTwo" />
+   </children>
 </AnchorPane>

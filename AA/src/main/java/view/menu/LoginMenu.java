@@ -3,13 +3,11 @@ package view.menu;
 import controller.MainMenuController;
 import controller.RegisterAndLoginAndProfileMenuController;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -65,7 +63,7 @@ public class LoginMenu extends Application {
     }
 
     public void backToEnterMenu() throws Exception{
-        new EnterMenu().start(stage);
+        new PrimaryMenu().start(stage);
     }
     public static RegisterAndLoginAndProfileMenuController getRegisterAndLoginAndProfileMenuController() {
         return registerAndLoginAndProfileMenuController;

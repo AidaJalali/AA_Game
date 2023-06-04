@@ -2,6 +2,7 @@
 
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -50,12 +51,12 @@
       <ChoiceBox id="choiceBox" fx:id="choiceBox" prefWidth="150" VBox.vgrow="NEVER">
          <items>
             <FXCollections fx:factory="observableArrayList">
-               <String fx:value="Avatar 1" fx:id="avatar1" />
-               <String fx:value="Avatar 2" fx:id="avatar2"/>
-               <String fx:value="Avatar 3" fx:id="avatar3"/>
-               <String fx:value="Avatar 4" fx:id="avatar4"/>
-               <String fx:value="Avatar 5" fx:id="avatar5"/>
-               <String fx:value="Avatar 6" fx:id="avatar6"/>
+               <String fx:id="avatar1" fx:value="Avatar 1" />
+               <String fx:id="avatar2" fx:value="Avatar 2" />
+               <String fx:id="avatar3" fx:value="Avatar 3" />
+               <String fx:id="avatar4" fx:value="Avatar 4" />
+               <String fx:id="avatar5" fx:value="Avatar 5" />
+               <String fx:id="avatar6" fx:value="Avatar 6" />
             </FXCollections>
          </items>
       </ChoiceBox>
@@ -66,4 +67,5 @@
    <Text layoutX="212.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" />
    <Text layoutX="391.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" />
    <Text layoutX="576.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" />
+   <Button layoutX="291.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#back" prefHeight="26.0" prefWidth="50.0" text="Back" />
 </AnchorPane>

@@ -36,15 +36,36 @@
             <version>2.10.1</version>
         </dependency>
         <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.10.1</version>
-        </dependency>
-        <dependency>
             <groupId>io.xiandan</groupId>
             <artifactId>gson-ktx</artifactId>
             <version>1.0.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>19.0.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>19.0.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fengdai.compose</groupId>
+            <artifactId>media</artifactId>
+            <version>0.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.xdty.media</groupId>
+            <artifactId>mediaplayer</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>im.ene.toro2</groupId>
+            <artifactId>toro-ext-mediaplayer</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
     </dependencies>
 
 </project>

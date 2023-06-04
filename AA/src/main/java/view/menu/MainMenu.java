@@ -5,12 +5,10 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import view.game.GameMenu;
+import view.game.Game;
 import java.util.Objects;
 
 public class MainMenu extends Application {
@@ -35,8 +33,8 @@ public class MainMenu extends Application {
     public void startGame() throws Exception {
         GameController gameController = new GameController();
         gameController.setCurrentUser(gameController.getCurrentUser());
-        GameMenu.setGameController(gameController);
-        new GameMenu().start(stage);
+        Game.setGameController(gameController);
+        new Game().start(stage);
     }
     public void resumeGame() throws Exception{
 
@@ -64,7 +62,7 @@ public class MainMenu extends Application {
     }
 
     public void exit() throws Exception{
-        new EnterMenu().start(stage);
+        new PrimaryMenu().start(stage);
     }
     public static MainMenuController getMainMenuController() {
         return mainMenuController;

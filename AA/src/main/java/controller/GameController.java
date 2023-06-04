@@ -1,10 +1,12 @@
 package controller;
 
-import model.Game;
+import javafx.stage.Stage;
 import model.User;
+import view.game.Game;
+import view.menu.EndMenu;
 
 public class GameController {
-    private static Game game;
+    private Game game;
     private User currentUser;
 
     public User getCurrentUser() {
@@ -15,11 +17,15 @@ public class GameController {
         this.currentUser = currentUser;
     }
 
-    public static Game getGame() {
-        return game;
+
+    public void setGame(Game game) {
+        this.game = game;
     }
 
-    public static void setGame(Game game) {
-        GameController.game = game;
+    public void endGame(String result , Stage stage) throws Exception {
+        EndMenu endMenu = new EndMenu();
+        endMenu.result.setText(result);
+        endMenu.result.setVisible(true);
+        endMenu.start(stage);
     }
 }

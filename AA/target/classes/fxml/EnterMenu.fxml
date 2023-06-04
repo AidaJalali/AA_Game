@@ -1,37 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Sphere?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="view.menu.EnterMenu">
+
+<BorderPane prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.PrimaryMenu">
     <left>
-        <Sphere drawMode="LINE" layoutX="219.0" layoutY="464.0" radius="75"/>
+        <Sphere drawMode="LINE" layoutX="219.0" layoutY="464.0" radius="75">
+         <effect>
+            <Shadow />
+         </effect></Sphere>
     </left>
     <right>
-        <Sphere drawMode="LINE" layoutX="219.0" layoutY="464.0" radius="75"/>
+        <Sphere drawMode="LINE" layoutX="219.0" layoutY="464.0" radius="75">
+         <effect>
+            <Shadow />
+         </effect></Sphere>
     </right>
     <center>
         <VBox alignment="CENTER" fillWidth="false" prefHeight="403.0" prefWidth="600.0" spacing="10">
-            <Text fill="#282727" strokeType="OUTSIDE" strokeWidth="0.0" text="AA" wrappingWidth="130.39993286132812">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AA" wrappingWidth="130.39993286132812">
                 <font>
-                    <Font name="Modern No. 20" size="92.0"/>
+                    <Font name="Modern No. 20" size="92.0" />
                 </font>
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.410526305437088" green="0.24783626198768616" blue="0.24783626198768616" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
             </Text>
-            <Button layoutX="211.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#enterRegisterMenu"
-                    prefHeight="30.0" prefWidth="454.0" text="Register">
+            <Button layoutX="211.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#enterRegisterMenu" prefHeight="30.0" prefWidth="454.0" text="Register">
             </Button>
-            <Button id="loginButton" layoutX="211.0" layoutY="131.0" mnemonicParsing="false"
-                    onMouseClicked="#enterLoginMenu" prefHeight="26.0" prefWidth="454.0" text="Login">
+            <Button id="loginButton" layoutX="211.0" layoutY="131.0" mnemonicParsing="false" onMouseClicked="#enterLoginMenu" prefHeight="26.0" prefWidth="454.0" text="Login">
             </Button>
-            <Button layoutX="211.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#enterMainMenuAsGuest"
-                    prefHeight="26.0" prefWidth="454.0" text="Guest">
+            <Button layoutX="211.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#enterMainMenuAsGuest" prefHeight="26.0" prefWidth="454.0" text="Guest">
             </Button>
-            <Button layoutX="211.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#exit"
-                    prefHeight="26.0" prefWidth="454.0" text="Exit">
+            <Button layoutX="211.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#exit" prefHeight="26.0" prefWidth="454.0" text="Exit">
             </Button>
         </VBox>
     </center>

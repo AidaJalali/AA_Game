@@ -1,6 +1,7 @@
 module AA {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.media;
     requires com.google.gson;
     exports controller;
     opens controller to javafx.fxml;
@@ -12,4 +13,5 @@ module AA {
     opens view.game to javafx.fxml;
 
 }
+
 

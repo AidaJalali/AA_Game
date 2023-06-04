@@ -69,7 +69,7 @@ public class RegisterMenu extends Application {
         password.setText("");
     }
     public void backToEnterMenu() throws Exception{
-        new EnterMenu().start(stage);
+        new PrimaryMenu().start(stage);
     }
     public static RegisterAndLoginAndProfileMenuController getRegisterAndLoginAndProfileMenuController() {
         return registerAndLoginAndProfileMenuController;
