@@ -29,6 +29,7 @@ import view.animation.Shooting;
 import view.menu.MainMenu;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 
 
@@ -63,7 +64,7 @@ public class Game extends Application {
     private Label timer = new Label();
 
     public Game() {
-        this.user = gameController.getCurrentUser();
+        user = new User("sahand" , "sahand");
         this.game = this;
         this.leftLittleBalls = user.getSettingMenuController().getNumberOfLittleBallsForPlayer() - user.getSettingMenuController().getNumberOfLittleBallsOnBigBall();
         this.leftMapBalls = user.getSettingMenuController().getNumberOfLittleBallsOnBigBall();
@@ -117,9 +118,6 @@ public class Game extends Application {
         return radius;
     }
 
-    public void setRadius(int radius) {
-        radius = radius;
-    }
 
     public int getLeftMapBalls() {
         return leftMapBalls;
@@ -139,7 +137,7 @@ public class Game extends Application {
 
     public void start(Stage stage) throws Exception {
         Game.stage = stage;
-        gamePane = FXMLLoader.load(this.getClass().getResource("/fxml/Game.fxml"));
+        gamePane = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("/fxml/Game.fxml")));
         scene = new Scene(gamePane);
         scene.getStylesheets().add(css);
         gameController.setGame(this);
@@ -148,7 +146,7 @@ public class Game extends Application {
         stage.show();
     }
 
-    private void initializeGame() throws InterruptedException {
+    private void initializeGame() {
         setRemaining();
         setTimer();
         setScore();
@@ -156,15 +154,12 @@ public class Game extends Application {
         setPlayerBalls();
         setTimerTimeLine();
         setMap();
-        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent keyEvent) {
-                if (keyEvent.getCode().equals(KeyCode.SPACE))
-                    new Shooting(game).play();
+        scene.setOnKeyPressed(keyEvent -> {
+            if (keyEvent.getCode().equals(KeyCode.SPACE))
+                new Shooting(game).play();
 
-                if (keyEvent.getCode().equals(KeyCode.ALT)) {
-                    freezeMode();
-                }
+            if (keyEvent.getCode().equals(KeyCode.ALT)) {
+                freezeMode();
             }
         });
     }
@@ -287,8 +282,7 @@ public class Game extends Application {
                         if (littleBall.getBoundsInParent().intersects(bigBall.getLittleBalls().get(i).getBoundsInParent())) {
 
                             try {
-                                //endGame();
-                                //gameController.endGame("YOU LOSE", stage);
+                                endGame();
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
                             }
@@ -420,7 +414,7 @@ public class Game extends Application {
     }
 
 
-    public void miniMenu() throws Exception {
+    public void miniMenu() {
 
         popup = new Popup();
         Pane pane = new Pane();
@@ -513,8 +507,8 @@ public class Game extends Application {
         for (int i = 0; i < game.getBigBall().getLittleBalls().size(); i++) {
             setTimeline(game.getBigBall().getLittleBalls().get(i), rotateDirection , -1 , user.getSettingMenuController().getSpeed() ,false);
         }
-        for(int i = 0 ; i < timelines2.size();i++){
-            timelines2.get(i).play();
+        for (Timeline value : timelines2) {
+            value.play();
         }
         popup.hide();
     }
