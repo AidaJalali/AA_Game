@@ -49,7 +49,7 @@ public class RegisterMenu extends Application {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Register Error");
-            alert.setContentText("Invalid Register!");
+            alert.setContentText(message);
             alert.showAndWait();
             reset();
             return;

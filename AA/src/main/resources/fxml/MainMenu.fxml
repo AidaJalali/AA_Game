@@ -2,11 +2,11 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.shape.Sphere?>
 
-<BorderPane prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.MainMenu">
+<BorderPane prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.MainMenu">
     <left>
         <Sphere drawMode="LINE" layoutX="219.0" layoutY="464.0" radius="75" />
     </left>
@@ -16,7 +16,7 @@
 
     <center>
         <VBox alignment="CENTER" fillWidth="false" prefHeight="403.0" prefWidth="600.0" spacing="10">
-         <Rectangle fx:id="profile" arcHeight="5.0" arcWidth="5.0" fill="#feffff" height="118.0" stroke="BLACK" strokeType="INSIDE" width="144.0" />
+         <Pane fx:id="image" prefHeight="200.0" prefWidth="200.0" />
             <Button layoutX="149.0" layoutY="83.0" mnemonicParsing="false" onMouseClicked="#startGame" prefHeight="26.0" prefWidth="588.0" text="Start Game" />
             <Button layoutX="149.0" layoutY="124.0" mnemonicParsing="false" onMouseClicked="#resumeGame" prefHeight="26.0" prefWidth="588.0" text="Resume Game" />
             <Button layoutX="149.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#enterScoreTable" prefHeight="26.0" prefWidth="588.0" text="ScoreTable" />

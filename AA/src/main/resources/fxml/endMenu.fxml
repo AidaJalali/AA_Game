@@ -2,26 +2,17 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.EndMenu">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.EndMenu">
     <children>
-        <Label fx:id="result" layoutX="228.0" layoutY="49.0" prefHeight="155.0" prefWidth="341.0" text="">
+        <Label fx:id="result" layoutX="332.0" layoutY="54.0" prefHeight="155.0" prefWidth="341.0" text="">
             <font>
                 <Font size="78.0" />
             </font>
         </Label>
-        <Button layoutX="296.0" layoutY="474.0" mnemonicParsing="false" onMouseClicked="#goToMainMenu" prefHeight="26.0" prefWidth="207.0" text="Main Menu" />
-        <Button layoutX="296.0" layoutY="474.0" mnemonicParsing="false" onMouseClicked="#startAgain" prefHeight="26.0" prefWidth="207.0" text="Start again" />
-        <TableView layoutX="324.0" layoutY="231.0" prefHeight="138.0" prefWidth="150.0">
-            <columns>
-                <TableColumn prefWidth="75.0" text="Score" />
-                <TableColumn prefWidth="75.0" text="Total Time" />
-            </columns>
-        </TableView>
-      <Button layoutX="296.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#startAgain" prefHeight="26.0" prefWidth="207.0" text="Main Menu" />
+        <Button layoutX="399.0" layoutY="473.0" mnemonicParsing="false" onMouseClicked="#startAgain" prefHeight="26.0" prefWidth="207.0" text="Start again" />
+      <Button layoutX="399.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#startAgain" prefHeight="26.0" prefWidth="207.0" text="Main Menu" />
     </children>
 </AnchorPane>

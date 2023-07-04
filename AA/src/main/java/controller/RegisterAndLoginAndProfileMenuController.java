@@ -4,6 +4,8 @@ import model.User;
 
 import java.io.FileNotFoundException;
 
+import static java.lang.System.exit;
+
 public class RegisterAndLoginAndProfileMenuController {
     private User currentUser;
     public String register(String username , String password)  {

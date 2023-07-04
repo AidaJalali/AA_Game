@@ -5,8 +5,8 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import view.game.Game;
 import java.util.Objects;
@@ -16,13 +16,9 @@ public class MainMenu extends Application {
     public String css = this.getClass().getResource("/css/style.css").toExternalForm();
     private static MainMenuController mainMenuController;
     @FXML
-    private Rectangle profile;
+    private ImageView imageView = new ImageView();
     public void start(Stage stage) throws Exception {
         Pane pane = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("/fxml/MainMenu.fxml")));
-        //TODO -- > YOU SHOULD FIX IMAGE PROBLEM
-        //Image image = new Image(this.getClass().getResource((mainMenuController.getCurrentUser().getProfileAddress())).toExternalForm());
-        //Image image2 = new Image(this.getClass().getResource("/fxml/images/10.png").toExternalForm());
-        //profile.setFill(new ImagePattern(image2));
         Scene scene = new Scene(pane);
         scene.getStylesheets().add(css);
         stage.setScene(scene);

@@ -3,14 +3,20 @@ module AA {
     requires javafx.fxml;
     requires javafx.media;
     requires com.google.gson;
-    exports controller;
-    opens controller to javafx.fxml;
-    exports model;
-    opens model to com.google.gson;
+
+    exports view.animation;
     exports view.menu;
-    opens view.menu to javafx.fxml;
+    exports enums;
+    exports controller;
+    exports model;
     exports view.game;
-    opens view.game to javafx.fxml;
+
+    opens view.animation to com.google.gson,javafx.fxml;
+    opens view.menu to com.google.gson, javafx.fxml;
+    opens view.game to com.google.gson,javafx.fxml;
+    opens enums to com.google.gson,javafx.fxml;
+    opens controller to  com.google.gson,javafx.fxml;
+    opens model to com.google.gson,javafx.fxml;
 
 }
 

@@ -1,21 +1,22 @@
 package model;
 
 import controller.SettingMenuController;
-import view.game.Game;
+import enums.ImageEnum;
 
 public class User {
     private String username;
     private String password;
-    private String profileAddress;
-    private int score;
-    private Game game;
+    private String image;
+    private int bestScore;
+    private int bestTime;
     private SettingMenuController settingMenuController = new SettingMenuController();
 
     public User(String username, String password){
         this.username = username;
         this.password = password;
-        this.profileAddress = "/fxml/images/1.png";
-        this.score = 0;
+        this.image = ImageEnum.PERSON.getImage();
+        this.bestScore = 0;
+        this.bestTime = 0;
     }
 
     public String getUsername() {
@@ -34,22 +35,6 @@ public class User {
         this.password = password;
     }
 
-    public String getProfileAddress() {
-        return profileAddress;
-    }
-
-    public void setProfileAddress(String profileAddress) {
-        this.profileAddress = profileAddress;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
     public SettingMenuController getSettingMenuController() {
         return settingMenuController;
     }
@@ -58,11 +43,27 @@ public class User {
         this.settingMenuController = settingMenuController;
     }
 
-    public Game getGame() {
-        return game;
+    public String getImage() {
+        return image;
     }
 
-    public void setGame(Game game) {
-        this.game = game;
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public int getBestScore() {
+        return bestScore;
+    }
+
+    public void setBestScore(int bestScore) {
+        this.bestScore = bestScore;
+    }
+
+    public int getBestTime() {
+        return bestTime;
+    }
+
+    public void setBestTime(int bestTime) {
+        this.bestTime = bestTime;
     }
 }

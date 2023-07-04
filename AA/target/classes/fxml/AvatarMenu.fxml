@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Sphere?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.AvatarMenu">
+<AnchorPane prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.menu.AvatarMenu">
     <Sphere drawMode="LINE" layoutX="50.0" layoutY="50.0" radius="50.0" />
     <Sphere drawMode="LINE" layoutX="755.0" layoutY="64.0" radius="50.0" />
    <Sphere drawMode="LINE" layoutX="64.0" layoutY="543.0" radius="50.0" />
@@ -68,4 +68,7 @@
    <Text layoutX="391.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" />
    <Text layoutX="576.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" />
    <Button layoutX="291.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#back" prefHeight="26.0" prefWidth="50.0" text="Back" />
+   <ImageView fx:id="me" fitHeight="150.0" fitWidth="200.0" layoutX="718.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true" />
+   <Text layoutX="805.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Me" wrappingWidth="59.4508056640625" />
+   <Button fx:id="add" layoutX="527.0" layoutY="517.0" mnemonicParsing="false" text="add picture" />
 </AnchorPane>
