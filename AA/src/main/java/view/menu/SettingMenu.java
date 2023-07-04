@@ -3,7 +3,6 @@ package view.menu;
 import controller.SettingMenuController;
 import enums.GameLevel;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -20,8 +19,10 @@ import java.util.ResourceBundle;
 
 public class SettingMenu extends Application implements Initializable {
     private static SettingMenuController settingMenuController;
+
     public static Stage stage;
     public static Boolean persianEffect = false;
+
     public String css = this.getClass().getResource("/css/style.css").toExternalForm();
     private AnchorPane anchorPane;
     private int numberOfLittleBallsOnBigBall = 6;
@@ -33,7 +34,10 @@ public class SettingMenu extends Application implements Initializable {
     public CheckBox changeButton;
     public CheckBox changeTheme;
     public CheckBox persian;
-    public Button addNumber;
+    public CheckBox map1;
+    public CheckBox map2;
+    public CheckBox map3;
+    public Button add;
     public TextField littleBalls;
     public void start(Stage stage) throws Exception  {
         SettingMenu.stage = stage;
@@ -47,7 +51,8 @@ public class SettingMenu extends Application implements Initializable {
 
     private void handle() {
 
-        EventHandler handler = event -> {
+
+        add.setOnAction(actionEvent -> {
             if (easy.isSelected()) {
                 settingMenuController.setSpeed(GameLevel.EASY.getSpeed());
                 settingMenuController.setFreezeTime(GameLevel.EASY.getFreezeTime());
@@ -66,29 +71,47 @@ public class SettingMenu extends Application implements Initializable {
             if(!persian.isSelected()){
                 persianEffect = false;
             }
-        };
-        addNumber.setOnAction(actionEvent -> numberOfLittleBallsForPlayer = Integer.parseInt(littleBalls.getText()));
+            if(map1.isSelected()) {
+                try {
+                    selectMap1();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(map2.isSelected()) {
+                try {
+                    selectMap2();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if(map3.isSelected()) {
+                try {
+                    selectMap3();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
 
     }
 
 
-    public void selectMap1(MouseEvent mouseEvent) throws Exception {
+    public void selectMap1() throws Exception {
         this.numberOfLittleBallsOnBigBall = 6;
     }
 
-    public void selectMap2(MouseEvent mouseEvent)throws Exception{
+    public void selectMap2()throws Exception{
         this.numberOfLittleBallsOnBigBall = 12;
     }
 
-    public void selectMap3(MouseEvent mouseEvent)throws Exception{
+    public void selectMap3()throws Exception{
         this.numberOfLittleBallsOnBigBall = 20;
     }
 
     public void setLittleNumbers(MouseEvent mouseEvent){
 
     }
-    public void setMute(MouseEvent mouseEvent){}
-
     public void setTheme(MouseEvent mouseEvent){}
 
     public void changeLanguage(MouseEvent mouseEvent){}
