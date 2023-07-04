@@ -10,6 +10,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -289,6 +290,7 @@ public class Game extends Application {
 
                             try {
                                 endGame();
+                                gameController.endGame("YOU LOSE" , stage , time , scoreNumber);
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
                             }
@@ -497,6 +499,17 @@ public class Game extends Application {
     }
 
     private void help() {
+        Popup help = new Popup();
+        VBox vBox = new VBox();
+        vBox.setMinSize(500,500);
+
+        TextField enter = new TextField("press enter for shooting");
+        TextField freezeMode = new TextField("press Alt for freezing mode");
+        TextField info = new TextField("Your score will be calculated by your time and score");
+        vBox.getChildren().addAll(enter, freezeMode, info);
+        vBox.setSpacing(10);
+        help.getContent().add(vBox);
+        help.show(stage);
     }
 
     private void music() {

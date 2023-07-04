@@ -30,8 +30,8 @@ public class PrimaryMenu extends Application {
         PrimaryMenu.stage = stage;
         root.setBackground(new Background(new BackgroundImage(new Image(ProfileMenu.class.getResource("/images/darkSun.jpg").toExternalForm()),
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1, 1, true, true, false, false))));
-       // if(mediaPlayer.getStatus() != MediaPlayer.Status.PLAYING)
-         //   mediaPlayer.play();
+        if(mediaPlayer.getStatus() != MediaPlayer.Status.PLAYING)
+            mediaPlayer.play();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(this.getClass().getResource("/css/style.css").toExternalForm());
         stage.setScene(scene);

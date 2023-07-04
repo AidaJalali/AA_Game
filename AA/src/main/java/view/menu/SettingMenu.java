@@ -34,9 +34,9 @@ public class SettingMenu extends Application implements Initializable {
     public CheckBox changeButton;
     public CheckBox changeTheme;
     public CheckBox persian;
-    public CheckBox map1;
-    public CheckBox map2;
-    public CheckBox map3;
+    public  RadioButton mapMap1;
+    public RadioButton mapMap2;
+    public RadioButton mapMap3;
     public Button add;
     public TextField littleBalls;
     public void start(Stage stage) throws Exception  {
@@ -45,7 +45,6 @@ public class SettingMenu extends Application implements Initializable {
         Scene scene = new Scene(anchorPane);
         scene.getStylesheets().add(css);
         stage.setScene(scene);
-        handle();
         stage.show();
     }
 
@@ -71,21 +70,21 @@ public class SettingMenu extends Application implements Initializable {
             if(!persian.isSelected()){
                 persianEffect = false;
             }
-            if(map1.isSelected()) {
+            if(mapMap1.isSelected()) {
                 try {
                     selectMap1();
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
             }
-            if(map2.isSelected()) {
+            if(mapMap2.isSelected()) {
                 try {
                     selectMap2();
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
             }
-            if(map3.isSelected()) {
+            if(mapMap3.isSelected()) {
                 try {
                     selectMap3();
                 } catch (Exception e) {
@@ -132,6 +131,6 @@ public class SettingMenu extends Application implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        handle();
     }
 }

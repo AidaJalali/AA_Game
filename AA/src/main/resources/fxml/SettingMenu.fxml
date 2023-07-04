@@ -26,9 +26,9 @@
       <RadioButton fx:id="hard" layoutX="530.0" layoutY="257.0" mnemonicParsing="false" text="Hard" />
       <TextField fx:id="littleBalls" layoutX="399.0" layoutY="390.0" />
       <Button fx:id="add" layoutX="394.0" layoutY="440.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="162.0" text="add changes" />
-      <RadioButton fx:id="map3" layoutX="532.0" layoutY="300.0" mnemonicParsing="false" text="map3" />
-      <RadioButton fx:id="map2" layoutX="443.0" layoutY="300.0" mnemonicParsing="false" text="map2" />
-      <RadioButton fx:id="map1" layoutX="328.0" layoutY="300.0" mnemonicParsing="false" text="map1" />
+      <RadioButton fx:id="mapMap2" layoutX="532.0" layoutY="300.0" mnemonicParsing="false" text="map3" />
+      <RadioButton fx:id="mapMap1" layoutX="443.0" layoutY="300.0" mnemonicParsing="false" text="map2" />
+      <RadioButton fx:id="mapMap3" layoutX="328.0" layoutY="300.0" mnemonicParsing="false" text="map1" />
     </children>
 
 
