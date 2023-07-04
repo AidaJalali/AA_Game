@@ -26,6 +26,7 @@ import model.LittleBall;
 import model.Time;
 import model.User;
 import view.animation.Shooting;
+import view.menu.MainMenu;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -62,8 +63,7 @@ public class Game extends Application {
     private Label timer = new Label();
 
     public Game() {
-        //this.user = gameController.getCurrentUser();
-        this.user = new User("aida", "122334");
+        this.user = gameController.getCurrentUser();
         this.game = this;
         this.leftLittleBalls = user.getSettingMenuController().getNumberOfLittleBallsForPlayer() - user.getSettingMenuController().getNumberOfLittleBallsOnBigBall();
         this.leftMapBalls = user.getSettingMenuController().getNumberOfLittleBallsOnBigBall();
@@ -433,6 +433,7 @@ public class Game extends Application {
         Button music = new Button("Music");
         Button help = new Button("Help");
         Button back = new Button("Back");
+        Button exit = new Button("Exit");
 
         resume.setOnAction(actionEvent -> resume());
         pause.setOnAction(ae -> pause());
@@ -447,6 +448,13 @@ public class Game extends Application {
         music.setOnAction(ae -> music());
         help.setOnAction(ae -> help());
         back.setOnAction(ae -> popup.hide());
+        exit.setOnAction(ae -> {
+            try {
+                exit();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
 
         pane.setMinWidth(200);
         pane.setMinHeight(400);
@@ -459,7 +467,7 @@ public class Game extends Application {
         vBox.setSpacing(20);
         vBox.setLayoutY(70);
 
-        vBox.getChildren().addAll(resume, pause, music, restart, mute, help, back);
+        vBox.getChildren().addAll(resume, pause, music, restart, mute, help, back,exit);
         pane.getChildren().add(vBox);
         popup.getContent().add(pane);
         popup.show(stage);
@@ -470,13 +478,14 @@ public class Game extends Application {
 
     private void music() {
         Popup music = new Popup();
-        Pane pane = new Pane();
+        VBox vBox = new VBox();
+        vBox.setMinSize(500,500);
         Button button1 = new Button("music 1");
         Button button2 = new Button("music 2");
         Button button3 = new Button("music 3");
-        pane.setMinSize(300, 300);
-        pane.getChildren().addAll(button1, button2, button3);
-        music.getContent().add(pane);
+        vBox.getChildren().addAll(button1, button2, button3);
+        vBox.setSpacing(10);
+        music.getContent().add(vBox);
         music.show(stage);
     }
 
@@ -508,6 +517,10 @@ public class Game extends Application {
             timelines2.get(i).play();
         }
         popup.hide();
+    }
+
+    private void exit() throws Exception {
+        new MainMenu().start(stage);
     }
 
 
