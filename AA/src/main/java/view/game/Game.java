@@ -5,14 +5,12 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -27,6 +25,7 @@ import model.Time;
 import model.User;
 import view.animation.Shooting;
 import view.menu.MainMenu;
+import view.menu.SettingMenu;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -189,7 +188,9 @@ public class Game extends Application {
     }
 
     private void changeRemaining() {
-        remaining.setText("Remaining : " + leftLittleBalls);
+        if(SettingMenu.persianEffect)
+            remaining.setText(leftLittleBalls + "باقی مانده : ");
+        else remaining.setText("Remaining : " + leftLittleBalls);
     }
 
     private void changeTimer() {
@@ -198,7 +199,9 @@ public class Game extends Application {
     }
 
     private void changeScore() {
-        score.setText("Score : " + scoreNumber);
+        if(SettingMenu.persianEffect)
+            score.setText(" : امتیاز" + scoreNumber);
+        else score.setText("Score : " + scoreNumber);
     }
 
     private void setMap() {
@@ -274,7 +277,10 @@ public class Game extends Application {
                         if (leftLittleBalls == 0) {
                             try {
                                 endGame();
-                                gameController.endGame("YOU WIN", stage , time , scoreNumber);
+                                if(SettingMenu.persianEffect)
+                                    gameController.endGame("شما بردید!", stage , time , scoreNumber);
+                                else
+                                    gameController.endGame("YOU WIN", stage , time , scoreNumber);
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
                             }
@@ -420,14 +426,37 @@ public class Game extends Application {
         Pane pane = new Pane();
         VBox vBox = new VBox();
 
-        Button pause = new Button("Pause");
-        Button resume = new Button("Resume");
-        Button restart = new Button("Restart");
-        Button mute = new Button("Mute");
-        Button music = new Button("Music");
-        Button help = new Button("Help");
-        Button back = new Button("Back");
-        Button exit = new Button("Exit");
+        Button pause = null;
+        Button resume = null;
+        Button restart = null;
+        Button mute = null;
+        Button music = null;
+        Button help= null;
+        Button back = null;
+        Button exit = null;
+
+        if(SettingMenu.persianEffect){
+            pause = new Button("توقف");
+            resume = new Button("ادامه");
+            restart = new Button("شروع دوباره");
+            mute = new Button("سکوت");
+            music = new Button("موسیقی");
+            help = new Button("کمک");
+            back = new Button("بازگشت");
+            exit = new Button("خروج");
+        }
+
+
+        if(!SettingMenu.persianEffect) {
+            pause = new Button("Pause");
+            resume = new Button("Resume");
+            restart = new Button("Restart");
+            mute = new Button("Mute");
+            music = new Button("Music");
+            help = new Button("Help");
+            back = new Button("Back");
+            exit = new Button("Exit");
+        }
 
         resume.setOnAction(actionEvent -> resume());
         pause.setOnAction(ae -> pause());
@@ -474,6 +503,7 @@ public class Game extends Application {
         Popup music = new Popup();
         VBox vBox = new VBox();
         vBox.setMinSize(500,500);
+
         Button button1 = new Button("music 1");
         Button button2 = new Button("music 2");
         Button button3 = new Button("music 3");
