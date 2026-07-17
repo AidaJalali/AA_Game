@@ -2,9 +2,24 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="pegah-tapsell" />
+      <option name="name" value="tapsell-central" />
+      <option name="url" value="https://reg.production.tpsl.ir/artifactory/maven-tapsell-local" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="pegah-brain" />
+      <option name="name" value="brain-central" />
+      <option name="url" value="https://reg.production.tpsl.ir/artifactory/maven-brain-local" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="pegah-mediaad" />
+      <option name="name" value="mediaad-central" />
+      <option name="url" value="https://reg.production.tpsl.ir/artifactory/maven-mediaad-local" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
@@ -15,6 +30,16 @@
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://reg.production.tpsl.ir/artifactory/maven-pegah-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="pegah-public" />
+      <option name="name" value="pegah-public" />
+      <option name="url" value="https://reg.production.tpsl.ir/artifactory/maven-pegah-public" />
     </remote-repository>
   </component>
 </project>
